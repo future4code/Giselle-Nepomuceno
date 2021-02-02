@@ -7,6 +7,7 @@
 *{
     text-decoration: none;
     margin: 0;
+    list-style-type: none;
 }
 a{
     color: inherit;
@@ -20,7 +21,7 @@ body {
     
 }
 header {
-   margin-top: 45px;
+   margin-top: 20px;
     display: flex;
     margin-bottom: 5px;
 
@@ -39,11 +40,11 @@ header img{
 .title-name {
     font-family: 'Dancing Script', cursive;
     font-weight: 700;
-    font-size: 22px;
+    font-size: 25px;
 }
 
 .nav {
-   margin-left: 300px;
+   margin-left: 250px;
    margin-top: 20px;
    font-family: 'Josefin Sans', sans-serif;
    font-size: 20px;
@@ -55,32 +56,20 @@ header img{
 }
 .nav a:hover{
   color: var(--color-hover);
+  transition: 300ms;
 }
 
 main{
-    height: 72vh;
-    background-color: var(--color-hover);
-    
+    height: 75vh;
+    background-image: url("./img/food.jpg");    
     margin: 0 auto;
     text-align: center;
     justify-content: center;
 }
-main img{
-    height: 50px;
-}
-main p {
-    
-    font-size: 20px;
-    padding: 10px;
-    margin-top: 40px;
-    margin-left: 40%;
-    width: 400px;
-    font-family: 'Josefin Sans', sans-serif;
-    
-}
+
 
 .content{
-    background-color: rgba(255, 255, 255, 0.5);
+    background-color: rgba(255, 255, 255, 0.4);
     height: 72vh;
     margin:0 auto;
    
@@ -88,18 +77,10 @@ main p {
     text-align: center;
     padding: 20px;
 }
-.content table{
-    border: 1px solid black;
-    margin-top: 40px;
-    margin-left: 30%;
-    padding: 15px;
-    
-    justify-content: center;
-    text-align: center;
-}
+
 
 footer{
-   
+    font-family: 'Josefin Sans', sans-serif; 
     position: absolute;
     bottom:0;
     margin:0 auto;
@@ -117,8 +98,117 @@ footer{
 .footer-icons img{
     height: 20px;
 }
-
+/* ========= Home Page =============*/
+.lunch {
+    font-family: 'Josefin Sans', sans-serif;
+    font-size:23px;
+     border-radius: 8px;
+     margin-top: 70px;
+     margin-left:330px;
+     padding: 20px;
+     background-color: white;
+     width: 600px;
+     display:flex;
+ }
+ .lunch p{
+     margin-top:40px;
+ }
+ .lunch img{
+    height: 160px;
+    padding: 20px
+}
+ 
 /* ========= Cardapio Page =============*/
+ .cardap{
+   font-family: 'Josefin Sans', sans-serif;
+    border-radius: 8px;
+    margin-top: 26px;
+    margin-left:310px;
+    padding: 15px;
+    background-color: white;
+    justify-content: center;
+    text-align: center;
+    width: 600px;
+}
+.cardap img{
+    height: 50px;
+}
+ .cardap h2 {
+padding: 15px;
+}
+.content th {
+    padding: 5px;
+}
 .content tr:hover{
+    transition: 300ms;
 background-color: aliceblue;
 }
+/* ========= Add Refeição =============*/
+
+form {
+    font-family: 'Josefin Sans', sans-serif; 
+    padding: 10px;
+    margin-top:50px;
+    margin-left: 350px;
+    
+    border-radius: 8px;
+    background-color: white;
+    width: 500px;
+
+    
+}
+form h2{
+    padding:15px;
+}
+label{
+    
+    font-size: 20px;
+    margin:5px;
+    padding: 10px;
+    
+}
+input {
+    margin:10px;
+    padding: 3px;
+    border: 1.5px solid black;
+    border-radius: 6px;
+}
+button {
+    font-family: 'Josefin Sans', sans-serif; 
+    font-size:19px;
+    margin-top: 20px;
+    padding: 10px;
+    color: white;
+    background-color: black;
+    border: 1px solid black;
+    border-radius: 4px;
+
+}
+button:hover{
+    transition: 300ms;
+    color: black;
+    background-color: white;
+    border: 1px solid black;
+}
+/* ========= Funcionários Page =============*/
+.emp {
+    font-family: 'Josefin Sans', sans-serif; 
+    text-align: center;
+    margin-top: 100px;
+    margin-left: 485px;
+    border: 1px solid black;
+    border-radius: 8px;
+    background-color: white;
+    width: 20%;
+}
+
+.emp ul {
+    font-family: 'Josefin Sans', sans-serif; 
+    font-weight: 500;
+    padding: 10px;
+}
+.emp h2{
+    padding: 10px;
+}
+.emp li {
+    padding:3px;}
