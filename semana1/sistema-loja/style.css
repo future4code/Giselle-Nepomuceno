@@ -20,15 +20,26 @@ body {
     font-family: 'Roboto', sans-serif;
     
 }
+
+
+/* ======= Header padrão ======= */
 header {
    margin-top: 20px;
     display: flex;
+
+    position: relative;
     margin-bottom: 5px;
 
 }
-header img{
-    height: 60px;
-    margin: 10px 5px 10px 70px;
+
+.logo-lunch {
+    display: flex;
+    flex: 1;
+}
+.logo-lunch img{
+   
+    height: 40px;
+    margin: 10px 5px 30px 50px;
 }
 .logo {
      font-family: 'Dancing Script', cursive;
@@ -44,24 +55,49 @@ header img{
 }
 
 .nav {
-   margin-left: 250px;
+   margin-left: 150px;
    margin-top: 20px;
    font-family: 'Josefin Sans', sans-serif;
-   font-size: 20px;
+   font-size: 17px;
 
 
 }
 .nav a {
-    padding-right: 50px;
+    padding-right: 25px;
 }
+
 .nav a:hover{
-  color: var(--color-hover);
+ padding:15px;
+ 
+  color: white;
+  border-radius: 8px;
+  background-color: black;
+  transition: 300ms;
+}
+.nav-img img {
+    height: 25px;
+    margin-right: 20px;
+    margin-top: 20px;
+    
+    
+}
+.nav-img img:hover{
+ padding:15px;
+
+ background-color:white;
+ border: 1.5px solid black;
+ border-radius: 35%;
+ 
   transition: 300ms;
 }
 
+/*===== Main padrão ======*/
+
 main{
     height: 75vh;
-    background-image: url("./img/food.jpg");    
+    background-image: url("./img/food.jpg"); 
+    background-repeat: no-repeat;  
+    background-size: cover; 
     margin: 0 auto;
     text-align: center;
     justify-content: center;
@@ -77,13 +113,13 @@ main{
     text-align: center;
     padding: 20px;
 }
-
+/*====== Footer padrão ======*/
 
 footer{
     font-family: 'Josefin Sans', sans-serif; 
     position: absolute;
     bottom:0;
-    margin:0 auto;
+    margin:auto;
     width: 100%;
     text-align: center;
     
@@ -103,8 +139,8 @@ footer{
     font-family: 'Josefin Sans', sans-serif;
     font-size:23px;
      border-radius: 8px;
-     margin-top: 70px;
-     margin-left:300px;
+     margin: 8% auto;
+     
      padding: 20px;
      background-color: white;
      width: 600px;
@@ -122,24 +158,25 @@ footer{
  .cardap{
    font-family: 'Josefin Sans', sans-serif;
     border-radius: 8px;
-    margin-top: 26px;
-    margin-left:310px;
-    padding: 15px;
+    margin: -1% auto;
+    padding: 10px;
     background-color: white;
     justify-content: center;
     text-align: center;
-    width: 600px;
+    width: 600px;height: 450px;
+    font-size: 16px;
 }
 .cardap img{
     height: 50px;
 }
  .cardap h2 {
+     margin-top: 10px;
 padding: 15px;
 }
 .content th {
     padding: 5px;
 }
-.content tr:hover{
+.cardap tr:hover{
     transition: 300ms;
 background-color: aliceblue;
 }
@@ -148,8 +185,7 @@ background-color: aliceblue;
 form {
     font-family: 'Josefin Sans', sans-serif; 
     padding: 10px;
-    margin-top:50px;
-    margin-left: 350px;
+    margin: 5% auto;
     
     border-radius: 8px;
     background-color: white;
@@ -194,8 +230,7 @@ button:hover{
 .emp {
     font-family: 'Josefin Sans', sans-serif; 
     text-align: center;
-    margin-top: 100px;
-    margin-left: 485px;
+    margin:7% auto;
     border: 1px solid black;
     border-radius: 8px;
     background-color: white;
@@ -211,4 +246,71 @@ button:hover{
     padding: 10px;
 }
 .emp li {
+    font-size:18px;
     padding:3px;}
+
+
+    /*======== Vendas ======= */
+    .vendas{
+        font-family: 'Josefin Sans', sans-serif;
+         border-radius: 8px;
+         margin: 4% auto;
+         padding: 20px;
+         background-color: white;
+         justify-content: center;
+         text-align: center;
+         width: 620px;
+     }
+  
+     /* ======== Historico ============ */
+     .record{
+        font-family: 'Josefin Sans', sans-serif;
+         border-radius: 8px;
+         margin: 0 auto;
+         padding: 10px;
+         background-color: white;
+         justify-content: center;
+         text-align: center;
+         width: 800px;
+     }
+   .record table, h2{
+    margin-top:20px;
+   }
+    .record td {
+        
+        padding:15px;
+    }
+    .search {
+        margin: 2% auto;
+        display: flex;
+        flex: 1;
+        justify-content: center;
+    }
+    .search input {
+    margin: 0;
+    height: 30px;
+    width:300px;
+    padding: 0;
+    border-radius: 8px 0 0 8px;
+    }
+    .search button {
+        font-family: 'Josefin Sans', sans-serif; 
+        font-size:18px;
+        margin: 0;
+        height: 33px;
+        width:170px;
+        color: white;
+        background-color: black;
+        border: 0.5px solid black;
+        border-radius: 0 8px 8px 0;
+        align-items: center;
+        text-align: center;
+    
+    }
+    .search button:hover{
+        transition: 300ms;
+    color: black;
+    background-color: white;
+    border: 0.5px solid black;
+    }
+   
