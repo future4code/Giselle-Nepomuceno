@@ -10,6 +10,10 @@
     font-family: 'Roboto', sans-serif;
 }
 
+body {
+    text-align: center;
+}
+
 h2 {
     background-color: #fe7e02;
     padding: 10px 5px 10px 5px;
@@ -111,6 +115,7 @@ div:last-child {
 
 table {
     width: 60%;
+    margin: auto;
 }
 td {
     text-align: center;
@@ -141,6 +146,8 @@ td button:hover {
     border-radius: 5px;
     font-size: 10px;
     color: black;
+   margin-top: 150px;
+   
 }
 
 #back-button:hover {
