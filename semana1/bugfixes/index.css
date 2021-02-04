@@ -118,6 +118,10 @@ td button {
     border-radius: 5px;
     color: black;
 }
+td button:hover {
+    background-color: #cfb541;
+    color: white;
+}
 
 .container-do-search {
     margin-top: 20px;
