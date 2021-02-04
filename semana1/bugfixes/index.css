@@ -20,7 +20,9 @@ h2 {
     color: white;
     text-align: center;
 }
-
+h3 {
+    padding: 15px;
+}
 input {
 
     border: 0.1px none black;
@@ -85,10 +87,25 @@ div>p:first-child {
 }
 
 
-#container-de-descricao>ol {
+#container-de-descricao> ol {
     padding: 15px 0px;
+    
+}
+ol
+{
+    counter-reset: LIST-ITEMS 0;
 }
 
+
+li:before
+{
+  content:counter( LIST-ITEMS) "";
+  counter-increment: LIST-ITEMS;
+  padding-right: 0.25em;
+  
+}
+
+ 
 #container-para-comprar {
     
     background-color: #e7eb90;
