@@ -54,7 +54,7 @@ header {
     font-size: 25px;
 }
 
-.nav {
+nav {
    margin-left: 150px;
    margin-top: 20px;
    font-family: 'Josefin Sans', sans-serif;
@@ -62,11 +62,11 @@ header {
 
 
 }
-.nav a {
+nav a {
     padding-right: 25px;
 }
 
-.nav a:hover{
+nav a:hover{
  padding:15px;
  
   color: white;
@@ -94,7 +94,7 @@ header {
 /*===== Main padrão ======*/
 
 main{
-    height: 75vh;
+    height: 72vh;
     background-image: url("./img/food.jpg"); 
     background-repeat: no-repeat;  
     background-size: cover; 
@@ -139,7 +139,7 @@ footer{
     font-family: 'Josefin Sans', sans-serif;
     font-size:23px;
      border-radius: 8px;
-     margin: 8% auto;
+     margin: 4% auto;
      
      padding: 20px;
      background-color: white;
@@ -292,7 +292,6 @@ button:hover{
     width:300px;
     padding: 0;
     border-radius: 8px 0 0 8px;
-    
     }
     .search button {
         font-family: 'Josefin Sans', sans-serif; 
