@@ -45,7 +45,9 @@ div>p:first-child {
    
 }
 
-
+button {
+    box-shadow: none;
+}
 
 .botao-amarelo {
     background-color: #ffaf43;
@@ -99,7 +101,7 @@ ol
 
 li:before
 {
-  content:counter( LIST-ITEMS) "";
+  content:counter( LIST-ITEMS) ".";
   counter-increment: LIST-ITEMS;
   padding-right: 0.25em;
   
