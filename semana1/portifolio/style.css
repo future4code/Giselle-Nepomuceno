@@ -1,13 +1,10 @@
 :root{
     --color-principal: #23b5b5;
-    --color-primary-light: white;
-    --color-primary-vine: rgb(85, 25, 25);
-    --color-primary-blur: #263140;
     --color-primary-black: black;
-    --color-secundary-light: rgb(199, 238, 153);
-    --color-secundary-vine: rgb(253, 154, 154);
-    --color-secundary-blur: #a6f0fd;
-    --color-secundary-light: rgb(163, 174, 236);
+    --color-primary-light: white;
+    --color-primary-dark: rgba(1, 5, 27, 0.4);
+    --color-primary-blur: #263140;
+    --color-secundary-blur: #a6f0fd; 
 }
 
 *{
@@ -23,31 +20,38 @@ a{
 }
 
 body{
-    background-color: var(--color-primary-blur);
-   
-   
+   /* background-image: url("./img/background-azul-escuro-degrade-8.jpg"); */
+    /* background-image:url("./img/background\ uau.jpg"); */
+      /* background-image: url("./img/galax2.jpg"); */
+     background-color: #263140;  
+     background-repeat: no-repeat;
+     background-size: cover;
+    
+    height: 100%;
 
 }
 header{
-
+  
     display: flex;
-    
+    padding-bottom: 20px;
 }
 .logo{
-    margin: 30px 0 0 40px;
-    padding: 5px;
+    margin: 30px 0px 0 60px;
+    
     height: 60px;
 }
 
 nav {
     font-family:'Poppins', sans-serif;
     font-size: 18px;
-    margin: 50px 0 0 350px;
+    margin: 50px 50px 0 320px;
     color: white;
+    
    
 }
 
 nav a {
+   
     padding: 20px;
 }
 nav a:hover {
@@ -56,23 +60,25 @@ nav a:hover {
     border-bottom-color: var(--color-secundary-blur);
     border-bottom: 3px;
 }
-.main{
+main{
+    
+   
     color:var(--color-primary-light);
     font-family: 'Open Sans', sans-serif;
-    
-    
+    margin: 40px 0 0 70px;  
+
 }
 
 .programadora {
     color:var(--color-primary-light);
     display:flex;
-    margin-top: 100px;
+    
     
 }
 .descricao {
     
-    margin-top: 70px;
-   margin-left: 100px;  
+    margin-top: 90px;
+   
    width: 600px;
 }
 .descricao p {
@@ -83,24 +89,24 @@ nav a:hover {
     font-weight: 500;
     
 }
-.descricao h3 {
+.descricao h3, h3 {
     color: var(--color-principal);
     font-family: 'Poppins', sans-serif;
     font-size: 14px;
 }
 .programadora img {
-    margin: 0px 70px 20px 150px;
+    margin: 0px 0px 60px 80px;
     height: 400px;
 }
 
 
 footer {
-   
+   margin: 0;
     position: fixed;
-    width: 100%;
     bottom: 0;
+    width: 100%;
     color:var(--color-primary-light);
-    background-color: var(--color-primary-black);
+    background-color: var(--color-primary-dark);
 }
 footer p {
     
@@ -112,8 +118,9 @@ footer p {
 
 /* =============== Sobre mim ============= */
 #sobre-mim { 
-    margin-top: 100px;
+    margin-top: 50px;
     display:flex;
+   
     
     
 }
@@ -132,13 +139,13 @@ footer p {
 }
 .sobre-mim {
     color:var(--color-primary-light);
-   margin-left: 100px;  
-    width: 700px;
+    margin-top: -40px;
+    width: 600px;
 }
 .profile {
-    margin: 60px 70px 20px 130px;
-    height: 300px;
-    width: 300px;
+    margin: 20px 0px 100px 120px;
+    height: 350px;
+    width: 350px;
     /* background-color: var(--color-primary-light); */
     background-image: url("./img/galax1.jpg");
     background-size: cover;
@@ -146,8 +153,8 @@ footer p {
     overflow: hidden;
 }
 .profile img {
-    margin: 35px 70px 20px 45px;
-    height: 300px;
+    margin: 25px 70px 20px 65px;
+    height: 350px;
     
 }
 .about{
@@ -159,4 +166,40 @@ font-weight: 600;
 .italic {
     font-family:'Poppins', sans-serif; 
     font-style: italic;
+}
+
+/* ============= Skill Page ================== */
+.porti {
+    margin-top: 80px;
+    display:flex;
+    flex-wrap: wrap;
+    margin-bottom: 80px;
+    
+}
+section {
+   margin-right: 60px;
+   margin-bottom: 60px;
+    width: 520px;
+    height: 420px;
+    border: 5px solid var(--color-principal);
+    border-radius: 8px;
+   background-color: var(--color-primary-dark);
+}
+section img {margin: 0;
+    padding: 0;
+    width: 520px;
+    height: 360px;
+}
+section:hover {
+    border: 5px solid var(--color-secundary-blur);
+    border-radius: 8px;
+    background-color: transparent;
+
+  
+}
+.tecnologias {
+   margin-left: 30px;
+}
+.port3 {
+    margin: 0 0 0 300px;
 }
