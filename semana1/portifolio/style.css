@@ -21,9 +21,9 @@ a{
 
 body{
    /* background-image: url("./img/background-azul-escuro-degrade-8.jpg"); */
-    /* background-image:url("./img/background\ uau.jpg"); */
+    background-image:url("./img/background\ uau.jpg");
       /* background-image: url("./img/galax2.jpg"); */
-     background-color: #263140;  
+     /* background-color: #263140;   */
      background-repeat: no-repeat;
      background-size: cover;
     
