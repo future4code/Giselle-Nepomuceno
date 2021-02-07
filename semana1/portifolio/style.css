@@ -118,9 +118,9 @@ footer p {
 
 /* =============== Sobre mim ============= */
 #sobre-mim { 
-    margin-top: 50px;
+  margin-top: -25px;
     display:flex;
-   margin-bottom: 80px;
+   
     
     
 }
@@ -130,22 +130,19 @@ footer p {
     font-size: 24px;
 }
 #sobre-mim p{
-     margin-top:10px;
-
-     text-align: justify;
-    
-    
+    margin-top:15px;
+    text-align: justify;
     font-size: 16px;
 }
 .sobre-mim {
     color:var(--color-primary-light);
-    margin-top: -40px;
-    width: 600px;
+    margin-top: 0px;
+    width: 500px;
 }
 .profile {
-    margin: 20px 0px 100px 120px;
-    height: 350px;
-    width: 350px;
+    margin: 10px 0 0 250px;
+    height: 200px;
+    width: 200px;
     /* background-color: var(--color-primary-light); */
     background-image: url("./img/galax1.jpg");
     background-size: cover;
@@ -153,9 +150,13 @@ footer p {
     overflow: hidden;
 }
 .profile img {
-    margin: 25px 70px 20px 65px;
-    height: 350px;
+    margin: 25px 90px 20px 30px;
+    height: 200px;
     
+}
+.part2 {
+    width: 500px;
+    margin-left: 80px;
 }
 .about{
     font-family:'Poppins', sans-serif; 
@@ -233,7 +234,7 @@ text-align: center;
 
 /* ============= Portifólio Page  ================== */
 .porti {
-    margin-top: 100px;
+    margin-top: 60px;
     display:flex;
     /* grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 80px;
@@ -241,7 +242,7 @@ text-align: center;
 }
 .porti-title {
     margin-top: 60px;
-    width: 1080px;
+   margin-right: 70px;
     text-align: center;
 }
 .porti-card {
