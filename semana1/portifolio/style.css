@@ -140,7 +140,7 @@ footer p {
     width: 500px;
 }
 .profile {
-    margin: 10px 0 0 250px;
+    margin: 10px 0 -5px 130px;
     height: 200px;
     width: 200px;
     /* background-color: var(--color-primary-light); */
@@ -295,5 +295,111 @@ section:hover {
     background-color: transparent;
 
   
+}
+/* 
+=============CONTATO =========== */
+
+
+#contato { 
+    margin-top: 50px;
+    display:flex;
+   
+    
+    
+}
+#contato img {
+    margin-left: 40px;
+    margin-top: 30px;
+    width: 50px;
+}
+#contato h2{
+    color: white;
+    font-weight: 500;
+    margin-top:30px;
+    font-size: 22px;
+}
+
+#contato p{
+     margin-top:10px;
+
+     text-align: justify;
+    
+    
+    font-size: 16px;
+}
+.contato-form {
+    color:var(--color-primary-light);
+    margin-top: -30px;
+    width: 500px;
+}
+.forms {
+    padding: 30px;
+    margin-top: 30px;
+    height: 300px;
+    background-color: var(--color-primary-dark);
+    border: 2px solid var(--color-principal);
+    border-radius: 8px;
+}
+
+.forms input {
+     margin-top: 10px;
+    width: 400px;
+    height: 25px;
+    border: 2px solid var(--color-principal);
+    border-radius: 8px;
+}
+.forms button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    width: 80px;
+    height: 30px;
+    margin-top:20px;
+    border-radius: 3px;
+    border: 2px solid var(--color-principal);
+    background-color: transparent;
+    color: white;
+
+}
+.forms button:hover {
+  transition: 300ms;
+    border: 2px solid none;
+    background-color: var(--color-principal);
+    color: white;
+
+}
+.message {
+    
+
+    height: 100px !important;
+    width: 200px;
+}
+
+.contato-link { 
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 500px;
+}
+.contato-link span {
+font-family:'Poppins', sans-serif; 
+font-size: 18px;
+font-weight: 600;
+margin-left: 20px;
+margin-top: -10px;
+text-align: center;
+
+}
+.contato-link img {
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+}
+.contato-links {
+    margin-top:30px;
+    height: 125px;
+    border: 2px solid var(--color-principal);
+    background-color: var(--color-primary-dark);
+    border-radius: 8px;
+    display: flex;
 }
 
