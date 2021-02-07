@@ -170,13 +170,37 @@ font-weight: 600;
 
 /* ============= Skill Page ================== */
 .porti {
-    margin-top: 80px;
-    display:flex;
-    flex-wrap: wrap;
+    margin-top: 150px;
+    display:grid;
+    grid-template-columns: 1fr 1fr 1fr;
     margin-bottom: 80px;
     
 }
-section {
+.porti-card {
+    margin-right: 60px;
+    margin-bottom: 60px;
+     width: 300px;
+     height: 200px;
+     border: 5px solid var(--color-principal);
+     border-radius: 8px;
+    background-color: var(--color-primary-dark);
+ }
+.porti-card h2{
+    margin: 13% auto;
+    width: 200px;
+    text-align: center;
+}
+.tecnologias {
+    margin-left: 30px;
+ }
+.project {
+    margin-top: 80px;
+    display:flex;
+    
+    margin-bottom: 80px;
+    
+}
+.project-card {
    margin-right: 60px;
    margin-bottom: 60px;
     width: 520px;
@@ -185,10 +209,10 @@ section {
     border-radius: 8px;
    background-color: var(--color-primary-dark);
 }
-section img {margin: 0;
+.project-card img {margin: 0;
     padding: 0;
     width: 520px;
-    height: 360px;
+    height: 420px;
 }
 section:hover {
     border: 5px solid var(--color-secundary-blur);
@@ -197,9 +221,4 @@ section:hover {
 
   
 }
-.tecnologias {
-   margin-left: 30px;
-}
-.port3 {
-    margin: 0 0 0 300px;
-}
+
