@@ -22,7 +22,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-        width: 1000px;
+    width: 1000px;
     background-color: yellow;
 }
 #top-container {
