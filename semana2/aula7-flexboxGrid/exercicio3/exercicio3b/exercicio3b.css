@@ -3,18 +3,19 @@ body {
     height: 100vh;
     padding: 0;
     margin: 0;
-    font-size: 10px;
+    font-size: 18px;
     color: white;
 }
 #top-container {
     display: grid;
-    grid-template-columns:1fr 1fr;
+    grid-template-columns:repeat(2, 1fr);
 }
 .green-background {
     background-color: green;
     width: 300px;
     height: 50px;
     display: grid;
+    
     justify-content: center;
     align-items: center;
 }
@@ -23,7 +24,7 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
-    width: 1000px;
+    width: 980px;
     background-color: yellow;
 }
 
@@ -31,6 +32,7 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
+    width: 1280px;
     height: 407px;
     background-color: fuchsia;
 }
@@ -70,6 +72,7 @@ body {
     display: grid;
     justify-content: center;
     align-items: center;
+    width: 1280px;
     height: 50px;
     background-color: purple;
 }
