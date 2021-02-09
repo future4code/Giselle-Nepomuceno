@@ -1,8 +1,8 @@
 :root{
-    --color-primary:#fd38;
+    --color-primary:rgb(6, 6, 95);
     --color-primary-header: rgb(157, 50, 179);
-    --color-secundary-header:rgb(177, 14, 122);
-    --color-secundary:#a4812d;
+    --color-secundary-header:rgba(177, 14, 123, 0.712);
+ 
 }
 
 *{
@@ -11,14 +11,19 @@
     box-shadow: none;
 }
 body{
+    font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
 }
 
 header {
+    color: white;
    display: flex;
    justify-content: space-between;
    background-color: var(--color-secundary-header);
+}
+span{
+    color:var(--color-primary);
 }
 .logo {
     margin-left: 30px;
@@ -44,21 +49,34 @@ header {
 .card {
 width:250px;
 height: 220px;
-background-color: burlywood;
+
 
 }
 
 .card p {
     
 }
-
+.video{
+display: flex;
+justify-content: center;
+height: 530px;
+}
 .card video{
     width:250px;
     height: 170px;
+}
+
+
+.video-card h2{
+  margin-top: 10px;
+ color: var(--color-primary);
 }
 footer {
     display:flex;
     color: white;
 justify-content: center;
     background-color: black;
+}
+footer span {
+    color:var(--color-secundary-header);
 }
