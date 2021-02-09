@@ -1,0 +1,181 @@
+/** 
+  *
+  *  ESTILOS GERAIS 
+  *
+  **/
+
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+body {
+    text-align: center;
+}
+
+h2 {
+    background-color: #fe7e02;
+    padding: 10px 5px 10px 5px;
+    color: white;
+    text-align: center;
+}
+h3 {
+    padding: 15px;
+}
+input {
+
+    border: 0.1px none black;
+    border-bottom: 0.7px solid;
+    height: 20px;
+    width: 500px;
+}
+
+button:focus {
+    color: white;
+}
+
+img {
+    width: 50px;
+}
+
+div>p:first-child {
+    
+    padding: 20px;
+   
+}
+
+button {
+    box-shadow: none;
+}
+
+.botao-amarelo {
+    background-color: #ffaf43;
+    
+    margin:auto;
+    width: 250px;
+    height: 40px;
+    border-radius: 5px;
+    font-size: 20px;
+    color: white;
+}
+
+.botao-amarelo:hover {
+    background-color: #c44f00;
+}
+
+.container {
+    height: 500px;
+    text-align: center;
+}
+
+.icone {
+    width: 15px;
+}
+.icone:hover {
+    opacity: 0.3;
+}
+.icone:active {
+    opacity: 1;
+}
+
+
+
+/** 
+  *
+  *  ESTILOS HOME 
+  *
+  **/
+
+#container-de-descricao {
+    background-color: #2274a5;
+    color: white;
+}
+.content {
+    padding-top:80px;
+}
+
+
+#container-de-descricao> ol {
+    padding: 15px 0px;
+    
+}
+ol
+{
+    counter-reset: LIST-ITEMS 0;
+}
+
+
+li:before
+{
+  content:counter( LIST-ITEMS) ".";
+  counter-increment: LIST-ITEMS;
+  padding-right: 0.25em;
+  
+}
+
+ 
+#container-para-comprar {
+    
+    background-color: #e7eb90;
+}
+
+#container-para-comprar > p {
+    display: block;
+    color: #c44f00;
+    padding: 100px 0;
+    font-size: 60px;
+}
+
+
+/**
+  *
+  *  ESTILOS COMPRAR 
+  *
+  **/
+
+div:nth-child(2),
+div:last-child {
+    text-align: center;
+}
+
+table {
+    width: 60%;
+    margin: auto;
+}
+td {
+    text-align: center;
+}
+td button {
+    background-color: #fadf63;
+    width: 150px;
+    height: 30px;
+    border-radius: 5px;
+    color: black;
+}
+td button:hover {
+    background-color: #cfb541;
+    color: white;
+}
+
+.container-do-search {
+    margin-top: 20px;
+    height: 100px;
+}
+
+
+#back-button {
+    background-color: white;
+    width: 100px;
+    height: 20px;
+    border: 1px solid black;
+    border-radius: 5px;
+    font-size: 10px;
+    color: black;
+   margin-top: 150px;
+   
+}
+
+#back-button:hover {
+    background-color: #635a3d
+}
