@@ -1,0 +1,405 @@
+:root{
+    --color-principal: #23b5b5;
+    --color-primary-black: black;
+    --color-primary-light: white;
+    --color-primary-dark: rgba(1, 5, 27, 0.4);
+    --color-primary-blur: #263140;
+    --color-secundary-blur: #a6f0fd; 
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-family: 'Poppins', sans-serif;
+    text-decoration: none;
+    
+}
+a{
+    color: inherit;
+}
+
+body{
+   /* background-image: url("./img/background-azul-escuro-degrade-8.jpg"); */
+    background-image:url("./img/background\ uau.jpg");
+      /* background-image: url("./img/galax2.jpg"); */
+     /* background-color: #263140;   */
+     background-repeat: no-repeat;
+     background-size: cover;
+    
+    height: 100%;
+
+}
+header{
+  
+    display: flex;
+    padding-bottom: 20px;
+}
+.logo{
+    margin: 30px 0px 0 60px;
+    
+    height: 60px;
+}
+
+nav {
+    font-family:'Poppins', sans-serif;
+    font-size: 18px;
+    margin: 50px 50px 0 320px;
+    color: white;
+    
+   
+}
+
+nav a {
+   
+    padding: 20px;
+}
+nav a:hover {
+    color: var(--color-secundary-blur);
+    
+    border-bottom-color: var(--color-secundary-blur);
+    border-bottom: 3px;
+}
+main{
+    
+   
+    color:var(--color-primary-light);
+    font-family: 'Open Sans', sans-serif;
+    margin: 40px 0 0 70px;  
+
+}
+
+.programadora {
+    color:var(--color-primary-light);
+    display:flex;
+    
+    
+}
+.descricao {
+    
+    margin-top: 90px;
+   
+   width: 600px;
+}
+.descricao p {
+    text-align: justify;
+}
+.descricao h1 {
+    font-size: 60px;
+    font-weight: 500;
+    
+}
+.descricao h3, h3 {
+    color: var(--color-principal);
+    font-family: 'Poppins', sans-serif;
+    font-size: 14px;
+}
+.programadora img {
+    margin: 0px 0px 60px 80px;
+    height: 400px;
+}
+
+
+footer {
+   margin: 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color:var(--color-primary-light);
+    background-color: var(--color-primary-dark);
+}
+footer p {
+    
+    width: 200px;
+    font-size: 12px;
+    margin: 0 auto;
+    padding: 5px;
+}
+
+/* =============== Sobre mim ============= */
+#sobre-mim { 
+  margin-top: -25px;
+    display:flex;
+   
+    
+    
+}
+#sobre-mim h2{
+    color: var(--color-principal);
+    margin-top:30px;
+    font-size: 24px;
+}
+#sobre-mim p{
+    margin-top:15px;
+    text-align: justify;
+    font-size: 16px;
+}
+.sobre-mim {
+    color:var(--color-primary-light);
+    margin-top: 0px;
+    width: 500px;
+}
+.profile {
+    margin: 10px 0 -5px 130px;
+    height: 200px;
+    width: 200px;
+    /* background-color: var(--color-primary-light); */
+    background-image: url("./img/galax1.jpg");
+    background-size: cover;
+    border-radius: 50%;
+    overflow: hidden;
+}
+.profile img {
+    margin: 25px 90px 20px 30px;
+    height: 200px;
+    
+}
+.part2 {
+    width: 500px;
+    margin-left: 80px;
+}
+.about{
+    font-family:'Poppins', sans-serif; 
+font-size: 12px;
+font-weight: 600;
+
+}
+.italic {
+    font-family:'Poppins', sans-serif; 
+    font-style: italic;
+}
+
+/* ============== Skills page  ================== */
+#skills { 
+    margin-top: 50px;
+    display:flex;
+   
+    
+    
+}
+#skills img {
+    margin-left: 30px;
+    margin-top: 30px;
+    width: 50px;
+}
+#skills h2{
+    color: var(--color-principal);
+    margin-top:30px;
+    font-size: 26px;
+}
+#skills h4{
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-style: italic;
+    font-weight: 600;
+    font-size: 16px;
+    margin-top: 20px;
+}
+#skills p{
+     margin-top:10px;
+
+     text-align: justify;
+    
+    
+    font-size: 16px;
+}
+.skills {
+    color:var(--color-primary-light);
+    margin-top: -30px;
+    width: 500px;
+}
+.skills li {
+    margin-top: 30px;
+}
+.skills-tec { 
+    margin-top: -40px;
+    margin-left: 80px;
+    width: 500px;
+}
+.skills-tec span {
+font-family:'Poppins', sans-serif; 
+font-size: 18px;
+font-weight: 600;
+margin-left: 20px;
+margin-top: -10px;
+text-align: center;
+
+}
+.skill-tec p {
+    margin-right: 20px;
+}
+.hard-tec {
+    display: flex;
+}
+
+/* ============= Portifólio Page  ================== */
+.porti {
+    margin-top: 60px;
+    display:flex;
+    /* grid-template-columns: 1fr 1fr 1fr;
+    margin-bottom: 80px;
+     */
+}
+.porti-title {
+    margin-top: 60px;
+   margin-right: 70px;
+    text-align: center;
+}
+.porti-card {
+    margin-right: 30px;
+    margin-left: 40px;
+ 
+     width: 300px;
+     height: 200px;
+     border: 5px solid var(--color-principal);
+     border-radius: 8px;
+    background-color: var(--color-primary-dark);
+ }
+.porti-card h2{
+    margin: 13% auto;
+    width: 200px;
+    text-align: center;
+}
+.tecnologias {
+    margin-left: 30px;
+ }
+.project {
+    margin-top: 20px;
+    display:flex;
+    flex:wrap;
+    margin-bottom: 80px;
+    
+}
+.project-title {
+    margin-top: 30px;
+    width: 1080px;
+    text-align: center;
+}
+.project-card {
+   margin-right: 60px;
+  
+    width: 500px;
+    height: 400px;
+    border: 5px solid var(--color-principal);
+    border-radius: 8px;
+   background-color: var(--color-primary-dark);
+}
+.project-card img {margin: 0;
+    padding: 0;
+    width: 500px;
+    height: 400px;
+}
+section:hover {
+    border: 5px solid var(--color-secundary-blur);
+    border-radius: 8px;
+    background-color: transparent;
+
+  
+}
+/* 
+=============CONTATO =========== */
+
+
+#contato { 
+    margin-top: 50px;
+    display:flex;
+   
+    
+    
+}
+#contato img {
+    margin-left: 40px;
+    margin-top: 30px;
+    width: 50px;
+}
+#contato h2{
+    color: white;
+    font-weight: 500;
+    margin-top:30px;
+    font-size: 22px;
+}
+
+#contato p{
+     margin-top:10px;
+
+     text-align: justify;
+    
+    
+    font-size: 16px;
+}
+.contato-form {
+    color:var(--color-primary-light);
+    margin-top: -30px;
+    width: 500px;
+}
+.forms {
+    padding: 30px;
+    margin-top: 30px;
+    height: 300px;
+    background-color: var(--color-primary-dark);
+    border: 2px solid var(--color-principal);
+    border-radius: 8px;
+}
+
+.forms input {
+     margin-top: 10px;
+    width: 400px;
+    height: 25px;
+    border: 2px solid var(--color-principal);
+    border-radius: 8px;
+}
+.forms button {
+    font-family: 'Poppins', sans-serif;
+    font-size: 18px;
+    width: 80px;
+    height: 30px;
+    margin-top:20px;
+    border-radius: 3px;
+    border: 2px solid var(--color-principal);
+    background-color: transparent;
+    color: white;
+
+}
+.forms button:hover {
+  transition: 300ms;
+    border: 2px solid none;
+    background-color: var(--color-principal);
+    color: white;
+
+}
+.message {
+    
+
+    height: 100px !important;
+    width: 200px;
+}
+
+.contato-link { 
+    text-align: center;
+    margin-top: 50px;
+    margin-left: 100px;
+    width: 500px;
+}
+.contato-link span {
+font-family:'Poppins', sans-serif; 
+font-size: 18px;
+font-weight: 600;
+margin-left: 20px;
+margin-top: -10px;
+text-align: center;
+
+}
+.contato-link img {
+    margin-right: 30px;
+    margin-bottom: 30px;
+
+}
+.contato-links {
+    margin-top:30px;
+    height: 125px;
+    border: 2px solid var(--color-principal);
+    background-color: var(--color-primary-dark);
+    border-radius: 8px;
+    display: flex;
+}
+
