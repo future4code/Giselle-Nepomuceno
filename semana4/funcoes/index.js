@@ -154,11 +154,77 @@ const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
 			let result = numeroPar(11)
 			console.log(result)
 	c.  Escreva uma função que receba um array de números e
-	 devolva a quantidade de números pares dentro dele.
-	 
+	 devolva a quantidade de números pares dentro dele
+
+	 const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+	
+		
+function quantidaDeNumerosPares(meuArray) {
+	let array2 = []
+	for(let pares of meuArray){
+		if (pares % 2 === 0){
+			array2.push(pares)
+		}
+	}
+return array2
+}
+	console.log(quantidaDeNumerosPares(array))]
+
+
+
+d.  Reescreva seu código anterior (do item c) 
+de tal forma que ele utilize a função do item b para verificar se o número é par
+
+const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+function numeroPar(number) {
+	if (number % 2 === 0){
+		return true
+	} else {
+		return false
+	}
+}
+
+			
+function quantidaDeNumerosPares(meuArray) {
+	let array2 = []
+	for(let pares of meuArray){
+		if (numeroPar(pares)){
+			array2.push(pares)
+		}
+	}
+return array2.length
+}
+	console.log(quantidaDeNumerosPares(array))
+
+	
+const array = [10, 23, 45, 78, 90, 52, 35, 67, 84, 22]
+function numeroPar(number) {
+	if (number % 2 === 0){
+		return true
+	} else {
+		return false
+	}
+}
+
+			
+function quantidaDeNumerosPares(meuArray) {
+	let array2 = []
+	for(let pares of meuArray){
+		if (numeroPar(pares)){
+			array2.push(pares)
+		}
+	}
+return array2.length
+}
+	console.log(quantidaDeNumerosPares(array))
+
+	
+
 
 */
 
+
+		
 
 /* 5.
 
