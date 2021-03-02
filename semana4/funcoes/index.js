@@ -224,14 +224,100 @@ return array2.length
 */
 
 
-		
+	//DESAFIOS 	
 
-/* 5.
+/* 1.
+ Funções são trechos de códigos como quaisquer outros mas que
+ podemos acessá-los mais de uma vez ao longo do código através de invocações/chamadas.
+ Então, funções podem chamar/invocar outras funções também. 
+ Sua tarefa é escrever duas funções:
 
+	a. Escreva uma arrow function que recebe um parâmetro e imprime no console esse parâmetro.
+	const myFunction = (love) => {
+	return  console.log(love)
+	} 
+
+	myFunction(10)
+
+
+ b.Escreva outra arrow function que recebe dois valores como parâmetros mas nenhum retorno. 
+ Faça a soma entre esses valores e chame a sua primeira função
+  mandando este resultado da soma como entrada para imprimí-lo
+
+const myFunction = (love) => {
+	return  console.log(love)
+	} 
+
+
+const problem = (problem1, problem2) => {
+	const soma = problem1 + problem2
+	myFunction(soma)
+}
+
+problem(8,5)
 
 */
 
-/* 5.
+/* 2.
 
+const numeros = [0, 8, 23, 16, 10, 15, 41, 12, 13]
+
+a.Escreva uma função que receba um array como parâmetro e retorne um array com 
+apenas os números pares e multiplicados por 2.
+const numero = [0, 8, 23, 16, 10, 15, 41, 12, 13]
+const arrayTop = (arrayNovo) => {
+	for (const numeros of arrayNovo){
+		if(numeros % 2 === 0){
+			console.log(numeros * 2)
+		}
+	}
+}
+
+arrayTop(numero)
+	b. Escreva uma função que receba um array como parâmetro e retorne o maior número deste array.
+
+	const numeros = [0, 8, 23, 16, 10, 15, 41, 12, 13]
+function retornaMaiorNumero(arrayDeNumeros){
+	let maiorNumero = arrayDeNumeros[0];
+	for(let i = 0; i < arrayDeNumeros.length; i++){
+		if(arrayDeNumeros[i] > maiorNumero)**** comentario Se  usar< irá retornar o menor número***** {
+			maiorNumero = arrayDeNumeros[i];
+		}
+	}
+	return maiorNumero
+}
+console.log(retornaMaiorNumero(numeros))
+
+c. Escreva uma função que receba um array como parâmetro e retorne o índice do maior número deste array.
+
+function retornaIndiceMaiorNumero(arrayDeNumeros){
+	let indice
+	let maiorNumero
+	arrayDeNumeros = arrayDeNumeros[0]
+	for(let i=0; i< arrayDeNumeros.length; i++){
+		if(arrayDeNumeros[i] > maiorNumero ){
+			maiorNumero = arrayDeNumeros[i]
+			indice = i
+		}
+	}
+	return {
+		maiorNumero, indice
+	}
+}
+
+console.log()
+
+d. Escreva uma função que recebe um array como parâmetro e retorne este array invertido.
+const numeros = [0, 8, 23, 16, 10, 15, 41, 12, 13]
+
+function invertido(arrayInvertido){
+	let arrayNovo = []
+	for(let i = arrayInvertido.length  -1 ; i >= 0; i--){
+		arrayNovo.push(arrayInvertido[i])
+	}
+	return arrayNovo
+}
+
+console.log(invertido(numeros))
 
 */
