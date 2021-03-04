@@ -87,10 +87,11 @@ function filtrarDespesas(){
     let valorMax = Number(document.getElementById('valorFiltroMax').value)
 
 
-    let despesasFiltradas // AQUI NESSA VARIÁVEL VEM A IMPLEMENTAÇÃO
-// despesas.filter((despe)=> {
-//     if(despe.valor >=10)
-// })
+    let despesasFiltradas = arrDespesas.filter((despesa)=>{
+         if (tipoFiltro === despesa.tipo || tipoFiltro === "todos" && despesa.valor >= valorMin && despesa.valor <= valorMax) {
+        return true;
+      }
+    });// AQUI NESSA VARIÁVEL VEM A IMPLEMENTAÇÃO
     imprimirDespesas(despesasFiltradas)
 }
 
