@@ -1,29 +1,33 @@
 //Exercício 1
 
-const numbers = [0, 8, 23, 16, 10, 15, 41, 12, 13];
 function inverteArray(array) {
+   
    const number = [];
    for(let i = array.length - 1; i >= 0 ; i--){
       number.push(array[i])
    }
-   
    return number
-   
 }
-
 
 //Exercício 2
 
 function retornaNumerosParesElevadosADois (array) {
-   // implemente sua lógica aqui
+  // implemente sua lógica aqui
+   let numerosElevados = []
+   for(let numeros of array){
+      if(numeros % 2 === 0){
+      numerosElevados.push(numeros ** 2)
+      }
+   }
+   return numerosElevados
 }
+
 
 //Exercício 3
 
 function retornaNumerosPares (array) {
    // implemente sua lógica aqui
-}
-
+   
 //Exercício 4
 
 function retornaMaiorNumero(array) {
