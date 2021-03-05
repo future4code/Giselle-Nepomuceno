@@ -40,7 +40,13 @@ function retornaNumerosPares (array) {
 
 function retornaMaiorNumero(array) {
    // implemente sua lógica aqui
+   
+   let maiorNumero = Math.max(...array)
+    return maiorNumero
+
+
 }
+
 
 //Exercício 5
 
