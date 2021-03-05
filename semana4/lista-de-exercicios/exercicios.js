@@ -42,7 +42,7 @@ function retornaMaiorNumero(array) {
    // implemente sua lógica aqui
    
    let maiorNumero = Math.max(...array)
-    return maiorNumero
+   return maiorNumero
 
 
 }
@@ -52,7 +52,14 @@ function retornaMaiorNumero(array) {
 
 function retornaQuantidadeElementos (array) {
    // implemente sua lógica aqui
-}
+
+   return array.length
+   //KKKKKK
+   
+	}
+
+      
+
 
 //Exercício 6
 
