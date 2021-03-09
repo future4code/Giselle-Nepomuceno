@@ -170,5 +170,17 @@ O número de tentativas foi: 4
     Não consegui concluir :(((
          */
 /* 2.
+Uma das principais características de uma boa pessoa programadora é conseguir 
+resolver seus problemas independentemente. Queremos que você comece a treinar 
+isso a partir de hoje! Então, vamos pedir para que você faça uma alteração no código acima. 
+Agora, ao invés de ter 2 jogadores, haverá um só; e o seu adversário será o computador. 
+A ideia é: ao iniciar o jogo, você deve sortear um número aleatório (entre 1 e 100) 
+e o usuário terá que ficar chutando o valor até acertar.
+Mantenha as demais funcionalidades e mensagens pedidas no exercício anterior.
 
+Quando resolver o exercício, pare e faça a seguinte reflexão:
+foi fácil fazer esta alteração? O que você poderia ter feito para que fosse mais fácil? 
+Deixe comentários no seu código sobre esta reflexão
+
+Abaixo, há uma referência que explica como sortear um número em Javascript
 */
