@@ -1,0 +1,14 @@
+.image-tec-container {
+  align-items: center;
+  border: 1px solid black;
+  border-radius: 8px;
+  width: 100px;
+  padding: 20px 30px;
+  margin: 10px auto;
+}
+.image-tec-container p {
+  text-align: center;
+}
+.image-tec-container > img {
+  width: 30px;
+}
