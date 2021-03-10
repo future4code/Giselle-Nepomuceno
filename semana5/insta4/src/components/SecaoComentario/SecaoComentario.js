@@ -8,7 +8,8 @@ export class SecaoComentario extends Component {
 
 	onChangeComentario = (event)=> {
 	//Se não usar arrow function o this trolla a todos D:	
-    this.setState({ textoComentarios: event.target.value});
+    this.setState({textoComentarios: event.target.value});
+	console.log(this.state.textoComentarios)
 	}
 
 	render() {
