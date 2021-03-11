@@ -32,7 +32,7 @@ class App extends React.Component {
   adicionaPost = () => {
 
     const novoPost= {
-      nome: this.state.valorNomeUsuario,
+      nomeUsuario: this.state.valorNomeUsuario,
       fotoUsuario: this.state.valorFotoUsuario,
       fotoPost: this.state.valorFotoPost
     };
