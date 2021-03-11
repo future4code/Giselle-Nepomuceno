@@ -1,7 +1,16 @@
 import React from 'react';
 import './App.css';
 import Post from './components/Post/Post';
+import styled from "styled-components";
 
+
+const ContainerForm = styled.div`
+ display:flex;
+  margin: 20px 0;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+`;
 
 
 class App extends React.Component {
@@ -69,6 +78,8 @@ class App extends React.Component {
     });
     return(
       <div>
+        
+        <ContainerForm>
         <div>
           <input
             value={this.state.valorNomeUsuario}
@@ -87,6 +98,7 @@ class App extends React.Component {
           />
           <button onClick={this.adicionaPost}>Postar</button>
         </div>
+        </ContainerForm>
         <div>
           {listaDePosts}
         </div>
