@@ -14,23 +14,36 @@ import Final from "./components/Final"
 
 
 export default class App extends React.Component {
-
+  state = {
+    etapa: 1,
+  }
+  renderizarEtapa = () => {
+    switch (this.state.etapa) {
+      case 1:
+        return <Etapa1 />
+      case 2:
+        return <Etapa2 />;
+      case 3:
+        return <Etapa3 />;
+      case 4:
+        return <Final />;
+      default:
+        return null
+    }
+  }
+  avancarEtapa = () => {
+    this.setState({etapa:this.state.etapa +1})
+  }
+ 
+  
   render(){
+   
     return (
-      <div >
-        Oi Giselle!
-        <div>
-          <Etapa1/>
-        </div>
-        <div>
-          <Etapa2/>
-        </div>
-        <div>
-          <Etapa3/>
-        </div>
-        <div>
-          <Final/>
-        </div>
+      <div>
+        {this.renderizarEtapa()}
+        {this.state.etapa !== 4 && (<button onClick={this.avancarEtapa}>Próxima Etapa</button>)}
+            
+        
         
       </div>
     );

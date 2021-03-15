@@ -17,19 +17,19 @@ export default class Etapa1 extends React.Component{
                 </div>
                 <div>
                     <p>2. Qual a sua idade?</p>
-                    <input type='text'></input>
+                    <input type='number'></input>
                 </div>
                 <div>
                     <p>3. Qual seu email?</p>
-                    <input type='text'></input>
+                    <input type='email'></input>
                 </div>
                 <div>
                     <p>4. Qual a sua escolaridade</p>
                     <select name="escolaridade" >
-                        <option value="Ensino Médio Incompleto"></option>
-                        <option value="Ensino Médio Completo"></option>
-                        <option value="Ensino Superior Incompleto"></option>
-                        <option value="Ensino Superior Completo"></option>
+                        <option value="Ensino Médio Incompleto">Ensino Médio Incompleto</option>
+                        <option value="Ensino Médio Completo">Ensino Médio Completo</option>
+                        <option value="Ensino Superior Incompleto">Ensino Superior Incompleto</option>
+                        <option value="Ensino Superior Completo">Ensino Superior Completo</option>
                     </select>
                 </div>
             </div>

@@ -16,8 +16,8 @@ export default class Etapa3 extends React.Component{
                 <div>
                     <p>2. Você faz algum curso complementar?</p>
                     <select name="escolaridade" >
-                        <option value="Inglês"></option>
-                        <option value="Informática"></option>
+                        <option value="Inglês">Inglês</option>
+                        <option value="Informática">Informática</option>
                     </select>
                 </div>
             </div>
