@@ -18,7 +18,7 @@ export default class App extends React.Component {
 
   render() {
     const renderizaTelaCorreta = () => {
-      if (this.state.estaLogado) {
+      if (this.state.estaLogado) {R
         return <Home  logout={this.fazerLogout}/>;
       } else {
         return <Login login={this.fazerLogin} />;
