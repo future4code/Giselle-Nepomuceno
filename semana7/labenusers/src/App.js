@@ -1,14 +1,9 @@
 import React from "react";
-import axios from "axios";
-// import styled from "styled-components";
-
 
 
 export default class App extends React.Component {
   state ={
-    users:[],
-    inputValueName:"",
-    inputValueEmail:"",
+    
   };
 
   componentDidMount(){
@@ -75,7 +70,8 @@ export default class App extends React.Component {
          <li key ={user.id}>{user.name}</li>
        ));
         return (
-        <div className="App">
+        <div>
+          <MeuStilo>
             <div>
               Nome:<input
               value={this.state.inputValueName}
@@ -90,12 +86,16 @@ export default class App extends React.Component {
             </div>
             <div>
               <button onClick={this.createUser}>Salvar Usuário</button>
-              {this.state.users.length > 0 ?(
+            </div>
+          </MeuStilo>
+          <div>
+                {this.state.users.length > 0 ?(
                 <ul>{usersList}</ul>
               ):(
                 <p>Carregando...</p>
               )}
-            </div>
+          </div>
+            
         </div>
       );
     }

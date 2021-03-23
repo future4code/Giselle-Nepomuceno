@@ -1,44 +1,32 @@
 import React from "react";
 import axios from "axios";
-// import styled from "styled-components";
+import styled from "styled-components";
 
-export default class registerUsers extends React.Component {
+const MeuStilo = styled.div`
+display:flex;
+flex-direction:column;
+justify-content: center;
+border:1.5px solid black;
+height:100px;
+width:300px;
+`
+
+export default class registerUser extends React.Component {
   state ={
-    users:[],
     inputValueName:"",
     inputValueEmail:"",
   };
 
-  componentDidMount(){
-    this.getUsers();
+  handleInputNameChange = (e) => {
+    this.setState({inputValueName: e.target.value });
   }
-
-  handleInputChange = (e) => {
-    this.setState({inputValue: e.target.value });
-  }
-
-  getUsers = () => {
-    axios
-    .get(
-      "https://us-central1-labenu-apis.cloudfunctions.net/labenusers/users",
-      {
-        headers: {
-          Authorization:"giselle-rosa-cruz"
-        }
-      }
-    )
+  handleInputEmailChange = (e) => {
+    this.setState({inputValueEmail: e.target.value });
   
-    .then((res) => {
-      this.setState({playlists: res.data.result.list});
-      console.log(res.data.result.list);
-    })
-    .catch((err)=> {
-      console.log(err.response.data);
-    });
-
   }
+ 
 
-  createUser = () => {
+   createUser = () => {
     const body = {
       name: this.state.inputValueName,
       email: this.state.inputValueEmail
@@ -63,22 +51,27 @@ export default class registerUsers extends React.Component {
       });
     };
     render(){
-      // const usersList = this.state.users.map((user) => ())
-        return (
+       return (
         <div>
+          <button>Ir para lista de Usuários</button>
+          <MeuStilo>
             <div>
               Nome:<input
               value={this.state.inputValueName}
+              onChange={this.handleInputNameChange}
               />
             </div>
             <div>
               Email:<input
               value={this.state.inputValueEmail}
+              onChange={this.handleInputEmailChange}
               />
             </div>
             <div>
               <button onClick={this.createUser}>Salvar Usuário</button>
             </div>
+          </MeuStilo>
+         
         </div>
       );
     }
