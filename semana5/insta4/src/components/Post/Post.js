@@ -19,6 +19,8 @@ class Post extends React.Component {
     comentando: false,
     numeroComentarios: 0,
 
+
+
   }
 
   
@@ -84,7 +86,7 @@ class Post extends React.Component {
     if(this.state.comentando) {
       componenteComentario = <SecaoComentario aoEnviar={this.aoEnviarComentario}/>
     }
-
+    
     return <div className={'post-container'}>
       <div className={'post-header'}>
         <img className={'user-photo'} src={this.props.fotoUsuario} alt={'Imagem do usuario'}/>
