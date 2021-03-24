@@ -1,5 +1,14 @@
 import React from "react";
 import axios from "axios";
+import styled from "styled-components";
+
+
+const CenterContent = styled.div`
+margin-top:50px;
+display:flex;
+justify-content: center;
+li{list-style:none;}
+`;
 
 
 export default class ListUsers extends React.Component {
@@ -40,13 +49,13 @@ export default class ListUsers extends React.Component {
         <div>
           <button onClick={this.props.register}>Voltar para registrar usuário</button>
           
-          <div>
+          <CenterContent>
                 {this.state.users.length > 0 ?(
                 <ul>{usersList}</ul>
               ):(
                 <p>Carregando...</p>
               )}
-          </div>
+          </CenterContent>
             
         </div>
       );

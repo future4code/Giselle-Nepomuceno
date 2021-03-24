@@ -2,14 +2,23 @@ import React from "react";
 import axios from "axios";
 import styled from "styled-components";
 
-const MeuStilo = styled.div`
+const Box = styled.div`
 display:flex;
 flex-direction:column;
+align-items:center;
 justify-content: center;
 border:1.5px solid black;
-height:100px;
+height:150px;
 width:300px;
-`
+`;
+const CenterContent = styled.div`
+display:flex;
+justify-content: center;
+`;
+
+const InputField = styled.div`
+padding:10px;
+`;
 
 export default class RegisterUser extends React.Component {
   state ={
@@ -54,23 +63,25 @@ export default class RegisterUser extends React.Component {
        return (
         <div>
           <button onClick={this.props.list}>Ir para lista de Usuários</button>
-          <MeuStilo>
-            <div>
-              Nome:<input
-              value={this.state.inputValueName}
-              onChange={this.handleInputNameChange}
-              />
-            </div>
-            <div>
-              Email:<input
-              value={this.state.inputValueEmail}
-              onChange={this.handleInputEmailChange}
-              />
-            </div>
-            <div>
-              <button onClick={this.createUser}>Salvar Usuário</button>
-            </div>
-          </MeuStilo>
+          <CenterContent>
+            <Box>
+              <InputField>
+                Nome:<input
+                value={this.state.inputValueName}
+                onChange={this.handleInputNameChange}
+                />
+              </InputField>
+              <InputField>
+                Email:<input
+                value={this.state.inputValueEmail}
+                onChange={this.handleInputEmailChange}
+                />
+              </InputField>
+              <div>
+                <button onClick={this.createUser}>Salvar Usuário</button>
+              </div>
+            </Box>              
+          </CenterContent>
          
         </div>
       );
