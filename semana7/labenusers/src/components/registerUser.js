@@ -53,10 +53,9 @@ export default class RegisterUser extends React.Component {
       .then((res) =>{
         this.setState({inputValueName: ""})
         this.setState({inputValueEmail: ""})
-        this.getUsers()
       })
       .catch((err) => {
-        console.log(err.response.data)
+        console.log(err)
       });
     };
     render(){
