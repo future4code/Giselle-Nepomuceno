@@ -1,6 +1,7 @@
 import React from "react";
 import ListUsers from "./components/ListUsers";
 import RegisterUser from "./components/RegisterUser";
+import UserDetails from "./components/UserDetails";
 
 
 export default class App extends React.Component {
@@ -8,6 +9,8 @@ export default class App extends React.Component {
     showList:false
     
   };
+
+  
     changeToRegister = ()=>{
       this.setState({showList: false});
     };
