@@ -1,4 +1,5 @@
 import React from "react";
+import listUsers from "./components/listUsers";
 import registerUser from "./components/registerUser";
 
 
@@ -18,12 +19,14 @@ export default class App extends React.Component {
     render(){
        const renderEverthing = () => {
          if(this.state.showList){
-           return <registerUser change ={this.}/>
+           return <registerUser register={this.changeToRegister}/>
+         }else {
+           return <listUsers list ={this.changeToList}/>
          }
-       }
+       };
         return (
         <div>
-          
+          {renderEverthing()}
         </div>
       );
     }

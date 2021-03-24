@@ -1,15 +1,6 @@
 import React from "react";
 import axios from "axios";
-import styled from "styled-components";
 
-const MeuStilo = styled.div`
-display:flex;
-flex-direction:column;
-justify-content:center;
-border:1.5px solid black;
-height:100px;
-width:300px;
-`
 
 export default class listUsers extends React.Component {
   state ={
@@ -48,7 +39,7 @@ export default class listUsers extends React.Component {
        ));
         return (
         <div>
-          <button>Voltar para registrar usuário</button>
+          <button onClick={this.props.register}>Voltar para registrar usuário</button>
           
           <div>
                 {this.state.users.length > 0 ?(

@@ -53,7 +53,7 @@ export default class registerUser extends React.Component {
     render(){
        return (
         <div>
-          <button>Ir para lista de Usuários</button>
+          <button onClick={this.props.list}>Ir para lista de Usuários</button>
           <MeuStilo>
             <div>
               Nome:<input
