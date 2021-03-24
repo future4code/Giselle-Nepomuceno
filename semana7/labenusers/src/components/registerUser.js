@@ -11,7 +11,7 @@ height:100px;
 width:300px;
 `
 
-export default class registerUser extends React.Component {
+export default class RegisterUser extends React.Component {
   state ={
     inputValueName:"",
     inputValueEmail:"",

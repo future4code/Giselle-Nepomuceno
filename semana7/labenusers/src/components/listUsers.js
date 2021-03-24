@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 
-export default class listUsers extends React.Component {
+export default class ListUsers extends React.Component {
   state ={
     users:[],
   };
@@ -29,7 +29,6 @@ export default class listUsers extends React.Component {
     })
     .catch((err) => {
       console.log(err)
-      alert("O programador fez merda, volte depois 🤣")
     });
   };
 

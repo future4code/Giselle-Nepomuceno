@@ -1,6 +1,6 @@
 import React from "react";
-import listUsers from "./components/listUsers";
-import registerUser from "./components/registerUser";
+import ListUsers from "./components/ListUsers";
+import RegisterUser from "./components/RegisterUser";
 
 
 export default class App extends React.Component {
@@ -8,20 +8,20 @@ export default class App extends React.Component {
     showList:false
     
   };
-    changeToList = ()=>{
-      this.setState({showList: true});
+    changeToRegister = ()=>{
+      this.setState({showList: false});
     };
 
-    changeToRegister = () =>{
-      this.setState({showList:false});
+    changeToList = () =>{
+      this.setState({showList:true});
     };
 
     render(){
        const renderEverthing = () => {
          if(this.state.showList){
-           return <registerUser register={this.changeToRegister}/>
+          return <ListUsers register={this.changeToRegister}/>;
          }else {
-           return <listUsers list ={this.changeToList}/>
+          return <RegisterUser list={this.changeToList}/>;
          }
        };
         return (
