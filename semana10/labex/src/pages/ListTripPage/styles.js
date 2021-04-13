@@ -7,7 +7,7 @@ justify-content:flex-end;
 margin-right:15px;
 `;
 
-export const BackButton = styled.button`
+export const Button = styled.button`
 padding:20px;
 margin-top:15px;
 border-radius:50px;

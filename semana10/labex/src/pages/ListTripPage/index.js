@@ -1,16 +1,16 @@
 import React from "react";
-import {goToFormPageApp } from '../../routes/coordinator'
+import {goToFormPageApp, goToHomePage } from '../../routes/coordinator'
 import {useHistory} from 'react-router-dom';
-import {BackButton, BackButtonContent} from './styles'
+import {Button, BackButtonContent, } from './styles'
 
 export default function ListTripPage() {
   const history = useHistory();
   return (
     <div>
       <BackButtonContent>
-        <BackButton onClick={() => history.goBack()}  >VOLTAR</BackButton>
+        <Button onClick={() => goToHomePage(history)}  >VOLTAR</Button>
     </BackButtonContent>
-    <BackButton onClick={() =>  goToFormPageApp (history)}> INSCREVER-SE</BackButton>
+    <Button onClick={() =>  goToFormPageApp(history)}> INSCREVER-SE</Button>
 
         Aqui temos a Pagina com as viagens para que possam ser escolhidas
     </div>
