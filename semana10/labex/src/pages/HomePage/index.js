@@ -1,7 +1,8 @@
 import React from "react";
-import {Container, HomeImg, AdminButtonContent, AdminButton, TripButton,TripButtonContent} from './styles'
+import {Container, HomeImg, LogoImg, AdminButtonContent, AdminButton, TripButton,TripButtonContent} from './styles'
 import {useHistory} from "react-router-dom"
 import { goToListTripPage, goToLoginPage } from "../../routes/coordinator";
+import Logo from '../../images/X.png'
 
 export default function HomePage() {
   const history = useHistory();
@@ -12,7 +13,7 @@ export default function HomePage() {
       <HomeImg>
 
          <div>
-            {/* Aqui ficará a logo */}
+            <LogoImg src={Logo}/>
          </div>
          <AdminButtonContent>
          <AdminButton onClick={() => goToLoginPage(history)}>ADMIN LOGIN</AdminButton>

@@ -6,7 +6,7 @@
     history.push("/viagens");
   };
 
-  export const goToFormPageApp = (history) => {
+  export const goToFormAppPage = (history) => {
     history.push("/viagens/inscrever");
   };
 
@@ -19,11 +19,11 @@
   };
   
   export const goToTripDetailsPage = (history) => {
-    history.push("/admin/:id");
+    history.push("/admin/viagens/id");
   };
   
   export const goToCreateTripPage = (history) => {
-    history.push("/admin/criarviagem");
+    history.push("/admin/viagens/criarviagem");
   };
   
 

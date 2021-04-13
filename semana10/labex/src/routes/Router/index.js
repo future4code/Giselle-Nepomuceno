@@ -18,8 +18,8 @@ export default function Router() {
         <Route path="/viagens/inscrever" exact component={FormAppPage}/>
         <Route path="/login" exact component={LoginPage}/>
         <Route path="/admin" exact component={AdminHomePage}/>
-        <Route path="/admin/:id" exact component={TripDetailsPage}/>
-        <Route path="/admin/criarviagem" exact component={CreateTripPage}/>
+        <Route path="/admin/viagens/id" exact component={TripDetailsPage}/>
+        <Route path="/admin/viagens/criarviagem" exact component={CreateTripPage}/>
         <Route> <ErrorPage /></Route>
         
         

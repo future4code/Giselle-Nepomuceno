@@ -24,6 +24,22 @@ transition:300ms;
  background-color:rgb(212,12, 126);
 }`;
 
+export const ButtonCreate = styled.button`
+padding:15px 40px;
+margin-top:15px;
+border-radius:50px;
+border:none;
+background-color:#E6207E;
+color:white;
+font-size:14px;
+font-family: 'Nunito', sans-serif;
+font-weight:800;
+cursor: pointer;
+transition:300ms;
+:hover{
+ background-color:rgb(212,12, 126);
+}`;
+
 export const ButtonContent = styled.div`
 display:flex;
 justify-content:center;
