@@ -13,16 +13,21 @@ export default function Router() {
   return (
     <div>
       <Switch>
-        <Route path="/" exact component={HomePage}/>
-        <Route path="/viagens" exact component={ListTripPage}/>
-        <Route path="/viagens/inscrever" exact component={FormAppPage}/>
-        <Route path="/login" exact component={LoginPage}/>
-        <Route path="/admin" exact component={AdminHomePage}/>
-        <Route path="/admin/viagens/id" exact component={TripDetailsPage}/>
-        <Route path="/admin/viagens/criarviagem" exact component={CreateTripPage}/>
-        <Route> <ErrorPage /></Route>
-        
-        
+        <Route path="/" exact component={HomePage} />
+        <Route path="/viagens" exact component={ListTripPage} />
+        <Route path="/viagens/inscrever" exact component={FormAppPage} />
+        <Route path="/login" exact component={LoginPage} />
+        <Route path="/admin" exact component={AdminHomePage} />
+        <Route
+          path="/admin/viagens/criarviagem"
+          exact
+          component={CreateTripPage}
+        />
+        <Route path="/admin/viagens/:id" exact component={TripDetailsPage} />
+        <Route>
+          {" "}
+          <ErrorPage />
+        </Route>
       </Switch>
     </div>
   );
