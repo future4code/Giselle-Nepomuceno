@@ -5,6 +5,11 @@ import {Button, BackButtonContent,ButtonContent, ButtonExit } from './styles'
 
 export default function AdminHomePage() {
   const history = useHistory();
+
+  const logout = () => {
+    window.localStorage.removeItem("token");
+    history.push("/login");
+  };
   return (
     <div>
       <BackButtonContent>
@@ -14,7 +19,7 @@ export default function AdminHomePage() {
      
     <ButtonContent>
       <Button onClick={() =>  goToCreateTripPage(history)}> CRIAR VIAGEM </Button>
-      <ButtonExit onClick={() => goToHomePage(history)}> SAIR </ButtonExit>
+      <ButtonExit onClick={logout}> SAIR </ButtonExit>
     </ButtonContent>
     </div>
   );

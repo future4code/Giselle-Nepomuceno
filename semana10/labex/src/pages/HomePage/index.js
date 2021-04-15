@@ -7,23 +7,19 @@ import Logo from '../../images/X.png'
 export default function HomePage() {
   const history = useHistory();
   
-
   return (
     <Container>
       <HomeImg>
-
          <div>
             <LogoImg src={Logo}/>
          </div>
          <AdminButtonContent>
          <AdminButton onClick={() => goToLoginPage(history)}>ADMIN LOGIN</AdminButton>
          </AdminButtonContent>
-
       </HomeImg>
       <TripButtonContent>
         <TripButton onClick={() => goToListTripPage(history)} >VER VIAGENS</TripButton>
       </TripButtonContent>
-      
     </Container>
   );
 }
