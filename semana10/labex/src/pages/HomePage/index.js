@@ -7,6 +7,7 @@ import Logo from '../../images/X.png'
 export default function HomePage() {
   const history = useHistory();
   
+  
   return (
     <Container>
       <HomeImg>

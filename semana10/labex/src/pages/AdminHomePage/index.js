@@ -2,10 +2,12 @@ import React from "react";
 import { goToCreateTripPage, goToHomePage } from '../../routes/coordinator'
 import {useHistory} from 'react-router-dom';
 import {Button, BackButtonContent,ButtonContent, ButtonExit } from './styles'
+import {useProtectedPage} from '../../hooks/useProtectedPage'
 
 export default function AdminHomePage() {
   const history = useHistory();
-
+  useProtectedPage();
+  
   const logout = () => {
     window.localStorage.removeItem("token");
     history.push("/login");

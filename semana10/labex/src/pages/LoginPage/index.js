@@ -4,11 +4,13 @@ import {useHistory} from 'react-router-dom';
 import {Button, BackButtonContent,ButtonContent, Input, Title, Field } from './styles'
 import axios from "axios";
 import { Container } from "../HomePage/styles";
+import {useProtectedPage} from '../../hooks/useProtectedPage'
 
 export default function LoginPage() {
   const history = useHistory();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  useProtectedPage();
   
   const handleEmail = (e) => {
     setEmail(e.target.value)

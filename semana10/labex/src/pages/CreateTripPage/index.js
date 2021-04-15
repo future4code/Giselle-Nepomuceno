@@ -2,9 +2,11 @@ import React from "react";
 import { goToAdminHomePage } from '../../routes/coordinator'
 import {useHistory} from 'react-router-dom';
 import {Button, BackButtonContent,ButtonContent, ButtonCreate } from './styles'
+import {useProtectedPage} from '../../hooks/useProtectedPage'
 
 export default function CreateTripPage() {
   const history = useHistory();
+  useProtectedPage();
   return (
     <div>
       <BackButtonContent>
