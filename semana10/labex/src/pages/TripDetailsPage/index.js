@@ -8,20 +8,12 @@ import { goToAdminHomePage } from "../../routes/coordinator";
 export default function TripDetailsPage() {
   useProtectedPage();
   const [trip, setTrip] = useState({});
-  const [candidates, setCandidates] = useState([]);
   const history = useHistory();
   const params = useParams();
 
   useEffect(() => {
     getTripDetail(params.id);
   }, []);
-
-  useEffect(() => {
-    getCandidates();
-  }, []);
-  candidates.map((candidate) => {
-    console.log(candidate.name);
-  });
 
   const getTripDetail = () => {
     const token = window.localStorage.getItem("token");
@@ -43,12 +35,14 @@ export default function TripDetailsPage() {
       });
   };
 
-  const getCandidates = () => {
+  const decideCandidate = (candidateId, decision) => {
     const token = window.localStorage.getItem("token");
-
+    const tripId = trip.id;
+    const body = { approve: decision };
     axios
-      .get(
-        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/giselle-rosa-cruz/trip/${params.id}`,
+      .put(
+        `https://us-central1-labenu-apis.cloudfunctions.net/labeX/giselle-rosa-cruz/trips/${tripId}/candidates/${candidateId}/decide`,
+        body,
         {
           headers: {
             auth: token,
@@ -56,7 +50,7 @@ export default function TripDetailsPage() {
         }
       )
       .then((res) => {
-        setCandidates(res.data.trip.candidates);
+        getTripDetail();
       })
       .catch((err) => {
         console.log(err);
@@ -69,7 +63,7 @@ export default function TripDetailsPage() {
         <Button onClick={() => goToAdminHomePage(history)}>VOLTAR</Button>
       </BackButtonContent>
       <div>
-        <Title>{trip.name}</Title>
+        <h2>{trip.name}</h2>
         <p> Nome: {trip.name}</p>
         <p> Descrição: {trip.description}</p>
         <p> Planeta: {trip.planet}</p>
@@ -79,13 +73,40 @@ export default function TripDetailsPage() {
       <div>
         <h2> Candidatos Pendentes</h2>
         <div>
-          {candidates.map((candidate) => {
-            <div>{candidate.name}</div>;
-          })}
+          {trip.candidates && trip.candidates.length > 0 ? (
+            trip.candidates &&
+            trip.candidates.map((candidate) => {
+              return (
+                <div>
+                  <p>{candidate.name}</p>
+                  <button onClick={() => decideCandidate(candidate.id, true)}>
+                    ✅
+                  </button>
+                  <button onClick={() => decideCandidate(candidate.id, false)}>
+                    ❌
+                  </button>
+                </div>
+              );
+            })
+          ) : (
+            <p> Não há candidatos</p>
+          )}
         </div>
       </div>
       <div>
         <h2> Candidatos Aprovados</h2>
+        {trip.approved && trip.approved.length > 0 ? (
+          trip.approved &&
+          trip.approved.map((candidate) => {
+            return (
+              <div>
+                <p>{candidate.name}</p>
+              </div>
+            );
+          })
+        ) : (
+          <p> Não há candidatos aprovados</p>
+        )}
       </div>
     </div>
   );

@@ -1,14 +1,8 @@
 import React from "react";
 import { goToHomePage } from "../../routes/coordinator";
 import { useHistory } from "react-router-dom";
-import {
-  Button,
-  BackButtonContent,
-  ButtonContent,
-  Input,
-  Title,
-  Field,
-} from "./styles";
+import { Button, BackButtonContent, ButtonContent, Title } from "./styles";
+import { Input, Fields } from "../../components/FormStyles";
 import axios from "axios";
 import { Container } from "../HomePage/styles";
 import { useForm } from "../../hooks/useForm";
@@ -49,7 +43,7 @@ export default function LoginPage() {
     return (
       <div>
         <form onSubmit={handleClick}>
-          <Field>
+          <Fields>
             <Input
               required
               title="É necessário preencher o campo de Email"
@@ -72,7 +66,7 @@ export default function LoginPage() {
               max={6}
               min={6}
             />
-          </Field>
+          </Fields>
           <ButtonContent>
             <Button> ENTRAR </Button>
           </ButtonContent>

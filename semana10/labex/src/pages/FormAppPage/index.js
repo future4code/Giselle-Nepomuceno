@@ -1,50 +1,52 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { goToListTripPage } from "../../routes/coordinator";
 import { useHistory } from "react-router-dom";
-import {
-  Button,
-  BackButtonContent,
-  ButtonContent,
-  Input,
-  Fields,
-  Select,
-  Title,
-} from "./styles";
+import { Button, BackButtonContent, ButtonContent, Title } from "./styles";
+import { Input, Fields, Select } from "../../components/FormStyles";
 import axios from "axios";
 import { useForm } from "../../hooks/useForm";
 import useRequestData from "../../hooks/useRequestData";
 
 export default function FormAppPage() {
   const history = useHistory();
+  const [countries, setCountries] = useState([]);
   const initialForm = {
     chooseTrip: "",
     name: "",
     age: "",
-    applicationTrip: "",
-    profission: "",
+    applicationText: "",
+    profession: "",
     country: "",
   };
 
   const FormApp = () => {
     const [form, onChangeForm, resetForm] = useForm(initialForm);
+
+    useEffect(() => {
+      getCountries();
+    }, []);
+
     const listTrips = useRequestData(
       "https://us-central1-labenu-apis.cloudfunctions.net/labeX/giselle-rosa-cruz/trips",
       []
     );
 
-    // listTrips.map((trip) => {
-    //   return console.log(trip.name);
-    // });
+    const getCountries = () => {
+      axios
+        .get(
+          "https://servicodados.ibge.gov.br/api/v1/localidades/paises?orderBy=nome"
+        )
+        .then((res) => {
+          setCountries(res.data);
+        })
+        .catch((err) => {
+          console.log(err);
+        });
+    };
 
-    const applyToTrip = (id) => {
-      const body = {
-        chooseTrip: form.chooseTrip,
-        name: form.name,
-        age: form.age,
-        applicationTrip: form.applicationTrip,
-        profission: form.profission,
-        country: form.country,
-      };
+    const applyToTrip = () => {
+      const body = form;
+      const id = form.chooseTrip;
 
       axios
         .post(
@@ -56,14 +58,14 @@ export default function FormAppPage() {
           history.push("/viagens");
         })
         .catch((err) => {
-          console.log("Erro interno");
+          alert("Erro interno");
         });
     };
 
     const handleClick = (e) => {
       e.preventDefault();
-      resetForm();
       applyToTrip();
+      resetForm();
     };
 
     return (
@@ -73,15 +75,16 @@ export default function FormAppPage() {
             <Select
               required
               name="chooseTrip"
+              value={form.chooseTrip}
               onChange={onChangeForm}
               placeholder="Escolha sua Viagem"
             >
+              <option selected disabled>
+                Selecione uma opção
+              </option>
               {listTrips.map((trip) => {
                 return <option value={trip.id}>{trip.name}</option>;
               })}
-              <option value disabled selected>
-                Selecione uma opção
-              </option>
             </Select>
             <Input
               required
@@ -97,40 +100,43 @@ export default function FormAppPage() {
               type="number"
               value={form.age}
               placeholder="Idade"
-              max={18}
             />
             <Input
               required
-              name="applicationTrip"
+              name="applicationText"
               onChange={onChangeForm}
               type="text"
-              value={form.applicationTrip}
+              value={form.applicationText}
               placeholder="Texto de candidatura"
               max={30}
             />
             <Input
               required
-              name="profission"
+              name="profession"
               onChange={onChangeForm}
               type="text"
-              value={form.profission}
+              value={form.profession}
               placeholder="Profissão"
               max={10}
             />
-            <Input
+            <Select
               required
               name="country"
               onChange={onChangeForm}
               type="text"
               value={form.country}
               placeholder="País de origem"
-              max={10}
-            />
+            >
+              <option selected disabled>
+                Selecionar País de origem
+              </option>
+              {countries.map((country) => {
+                return <option value={country.nome}>{country.nome}</option>;
+              })}
+            </Select>
           </Fields>
           <ButtonContent>
-            <Button onClick={() => applyToTrip(form.id)} key={form.id}>
-              INSCREVA-SE
-            </Button>
+            <Button> INSCREVA-SE</Button>
           </ButtonContent>
         </form>
       </div>

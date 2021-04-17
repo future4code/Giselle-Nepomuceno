@@ -6,11 +6,9 @@ import {
   BackButtonContent,
   ButtonContent,
   ButtonCreate,
-  Input,
-  Field,
   Title,
-  Select,
 } from "./styles";
+import { Input, Fields, Select } from "../../components/FormStyles";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import axios from "axios";
 
@@ -54,14 +52,14 @@ export default function CreateTripPage() {
 
     const handleClick = (e) => {
       e.preventDefault();
-      resetForm();
       create();
+      resetForm();
     };
 
     return (
       <div>
         <form onSubmit={handleClick}>
-          <Field>
+          <Fields>
             <Input
               required
               name="name"
@@ -112,7 +110,7 @@ export default function CreateTripPage() {
               value={form.durationInDays}
               placeholder="Duração"
             />
-          </Field>
+          </Fields>
           <ButtonContent>
             <ButtonCreate> CRIAR </ButtonCreate>
           </ButtonContent>

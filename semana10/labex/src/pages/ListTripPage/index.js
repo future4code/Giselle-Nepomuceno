@@ -1,7 +1,13 @@
 import React from "react";
 import { goToFormAppPage, goToHomePage } from "../../routes/coordinator";
 import { useHistory } from "react-router-dom";
-import { Button, BackButtonContent, ButtonContent } from "./styles";
+import {
+  Button,
+  BackButtonContent,
+  ButtonContent,
+  TripContent,
+  TripContainer,
+} from "./styles";
 import useRequestData from "../../hooks/useRequestData";
 
 export default function ListTripPage() {
@@ -16,19 +22,19 @@ export default function ListTripPage() {
       <BackButtonContent>
         <Button onClick={() => goToHomePage(history)}>VOLTAR</Button>
       </BackButtonContent>
-      <div>
+      <TripContainer>
         {listTrips.map((trip) => {
           return (
-            <div>
+            <TripContent>
               <h3>{trip.name}</h3>
               <p>{trip.description}</p>
               <p>{trip.planet}</p>
               <p>{trip.durationInDays}</p>
               <p>{trip.date}</p>
-            </div>
+            </TripContent>
           );
         })}
-      </div>
+      </TripContainer>
 
       <ButtonContent>
         <Button onClick={() => goToFormAppPage(history)}> VIAJE AGORA </Button>
