@@ -7,6 +7,7 @@ import {
   ButtonContent,
   TripContent,
   TripContainer,
+  TripTitle,
 } from "./styles";
 import useRequestData from "../../hooks/useRequestData";
 
@@ -26,7 +27,7 @@ export default function ListTripPage() {
         {listTrips.map((trip) => {
           return (
             <TripContent>
-              <h3>{trip.name}</h3>
+              <TripTitle>{trip.name}</TripTitle>
               <p>{trip.description}</p>
               <p>{trip.planet}</p>
               <p>{trip.durationInDays}</p>

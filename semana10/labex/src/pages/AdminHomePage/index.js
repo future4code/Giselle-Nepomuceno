@@ -2,9 +2,20 @@ import React, { useState } from "react";
 import axios from "axios";
 import { goToCreateTripPage, goToHomePage } from "../../routes/coordinator";
 import { useHistory } from "react-router-dom";
-import { Button, BackButtonContent, ButtonContent, ButtonExit } from "./styles";
+import {
+  Button,
+  BackButtonContent,
+  ButtonContent,
+  ButtonExit,
+  TripContainer,
+  TripContent,
+  Trip,
+  DeleteContent,
+  TripText,
+} from "./styles";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
 import useRequestData from "../../hooks/useRequestData";
+import DeleteImg from "../../images/delete.svg";
 
 export default function AdminHomePage() {
   const history = useHistory();
@@ -30,7 +41,7 @@ export default function AdminHomePage() {
         }
       )
       .then((res) => {
-        listTrips();
+        history.push("/admin");
       })
       .catch((err) => {
         console.log(err);
@@ -47,24 +58,25 @@ export default function AdminHomePage() {
       <BackButtonContent>
         <Button onClick={() => goToHomePage(history)}>VOLTAR</Button>
       </BackButtonContent>
-      {listTrips.map((trip) => {
-        return (
-          <div>
-            <button onClick={() => goToDetailPage(trip.id)} key={trip.id}>
-              <div>
-                <h3>{trip.name}</h3>
-              </div>
-            </button>
-            <button
-              onClick={() => {
-                deleteTrip(trip.id);
-              }}
-            >
-              X
-            </button>
-          </div>
-        );
-      })}
+      <TripContainer>
+        {listTrips.map((trip) => {
+          return (
+            <TripContent onClick={() => goToDetailPage(trip.id)} key={trip.id}>
+              <Trip>
+                <TripText>{trip.name}</TripText>
+              </Trip>
+              <DeleteContent>
+                <img
+                  src={DeleteImg}
+                  onClick={() => {
+                    deleteTrip(trip.id);
+                  }}
+                />
+              </DeleteContent>
+            </TripContent>
+          );
+        })}
+      </TripContainer>
       <ButtonContent>
         <Button onClick={() => goToCreateTripPage(history)}>
           CRIAR VIAGEM

@@ -31,3 +31,48 @@ export const Title = styled.h2`
   font-size: 28px;
   color: #338899;
 `;
+
+export const ButtonContent = styled.div`
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+`;
+export const TripContainer = styled.div`
+  display: grid;
+  gap: 20px;
+  justify-content: center;
+  align-items: center;
+  margin: 30px;
+`;
+export const TripContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background-color: rgb(251, 253, 253);
+  border: 1px solid #338899;
+  border-radius: 10px;
+  max-height: 600px;
+  max-width: 600px;
+  padding: 10px;
+  box-sizing: border-box;
+`;
+export const TripTitle = styled.h2`
+  color: #828282;
+  text-shadow: 0.1em 0.1em 0.2em white;
+`;
+export const TripInfo = styled.h4`
+  color: #828282;
+`;
+export const Span = styled.span`
+  color: black;
+  font-weight: 400;
+`;
+export const Approved = styled.p`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+`;
+export const CandidateInfo = styled.h4`
+  color: #828282;
+  margin: 5px;
+`;

@@ -9,7 +9,7 @@ import {
   TripButtonContent,
 } from "./styles";
 import { useHistory } from "react-router-dom";
-import { goToListTripPage, goToLoginPage } from "../../routes/coordinator";
+import { goToListTripPage } from "../../routes/coordinator";
 import Logo from "../../images/X.png";
 
 export default function HomePage() {

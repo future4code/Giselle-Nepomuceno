@@ -2,7 +2,19 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { useHistory, useParams } from "react-router-dom";
 import { useProtectedPage } from "../../hooks/useProtectedPage";
-import { Button, BackButtonContent, Title } from "./styles";
+import {
+  Button,
+  BackButtonContent,
+  ButtonContent,
+  Title,
+  TripContainer,
+  TripContent,
+  TripTitle,
+  TripInfo,
+  CandidateInfo,
+  Span,
+  Approved,
+} from "./styles";
 import { goToAdminHomePage } from "../../routes/coordinator";
 
 export default function TripDetailsPage() {
@@ -50,6 +62,7 @@ export default function TripDetailsPage() {
         }
       )
       .then((res) => {
+        alert("Decisão cadastrada com sucesso");
         getTripDetail();
       })
       .catch((err) => {
@@ -62,50 +75,77 @@ export default function TripDetailsPage() {
       <BackButtonContent>
         <Button onClick={() => goToAdminHomePage(history)}>VOLTAR</Button>
       </BackButtonContent>
+      <TripContainer>
+        <TripContent>
+          <TripTitle>{trip.name}</TripTitle>
+          <TripInfo>
+            Nome: <Span>{trip.name}</Span>
+          </TripInfo>
+          <TripInfo>
+            Descrição: <Span>{trip.description}</Span>
+          </TripInfo>
+          <TripInfo>
+            Planeta:<Span> {trip.planet}</Span>
+          </TripInfo>
+          <TripInfo>
+            Duração: <Span>{trip.durationInDays}</Span>
+          </TripInfo>
+          <TripInfo>
+            Data: <Span>{trip.date}</Span>
+          </TripInfo>
+        </TripContent>
+      </TripContainer>
       <div>
-        <h2>{trip.name}</h2>
-        <p> Nome: {trip.name}</p>
-        <p> Descrição: {trip.description}</p>
-        <p> Planeta: {trip.planet}</p>
-        <p>Duração: {trip.durationInDays}</p>
-        <p>Data: {trip.date}</p>
-      </div>
-      <div>
-        <h2> Candidatos Pendentes</h2>
-        <div>
+        <Title> Candidatos Pendentes</Title>
+        <TripContainer>
           {trip.candidates && trip.candidates.length > 0 ? (
             trip.candidates &&
             trip.candidates.map((candidate) => {
               return (
-                <div>
-                  <p>{candidate.name}</p>
-                  <button onClick={() => decideCandidate(candidate.id, true)}>
-                    ✅
-                  </button>
-                  <button onClick={() => decideCandidate(candidate.id, false)}>
-                    ❌
-                  </button>
-                </div>
+                <TripContent>
+                  <CandidateInfo>
+                    Nome: <Span>{candidate.name}</Span>
+                  </CandidateInfo>
+                  <CandidateInfo>
+                    Texto de Candidatura:{" "}
+                    <Span>{candidate.applicationText}</Span>
+                  </CandidateInfo>
+                  <CandidateInfo>
+                    Profissão: <Span>{candidate.profession}</Span>
+                  </CandidateInfo>
+                  <CandidateInfo>
+                    Idade: <Span>{candidate.age}</Span>
+                  </CandidateInfo>
+                  <CandidateInfo>
+                    País: <Span>{candidate.country}</Span>
+                  </CandidateInfo>
+                  <ButtonContent>
+                    <Button onClick={() => decideCandidate(candidate.id, true)}>
+                      APROVAR
+                    </Button>
+                    <Button
+                      onClick={() => decideCandidate(candidate.id, false)}
+                    >
+                      REPROVAR
+                    </Button>
+                  </ButtonContent>
+                </TripContent>
               );
             })
           ) : (
-            <p> Não há candidatos</p>
+            <p> Não há candidatos para aprovar</p>
           )}
-        </div>
+        </TripContainer>
       </div>
       <div>
-        <h2> Candidatos Aprovados</h2>
+        <Title> Candidatos Aprovados</Title>
         {trip.approved && trip.approved.length > 0 ? (
           trip.approved &&
           trip.approved.map((candidate) => {
-            return (
-              <div>
-                <p>{candidate.name}</p>
-              </div>
-            );
+            return <Approved>{candidate.name}</Approved>;
           })
         ) : (
-          <p> Não há candidatos aprovados</p>
+          <Approved>Não há candidatos aprovados</Approved>
         )}
       </div>
     </div>
