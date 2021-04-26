@@ -4,7 +4,7 @@ import { Container } from "./styles";
 function FeedPage() {
   return (
     <Container>
-      <div></div>
+      <div>Feed Page</div>
     </Container>
   );
 }
