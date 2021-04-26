@@ -29,6 +29,7 @@ export default class RegisterUser extends React.Component {
   handleInputNameChange = (e) => {
     this.setState({inputValueName: e.target.value });
   }
+  // esse é a abreviação de event...
   handleInputEmailChange = (e) => {
     this.setState({inputValueEmail: e.target.value });
   
