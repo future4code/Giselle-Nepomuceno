@@ -3,9 +3,8 @@ import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
+import { Input, Fields } from "./styles";
 import { goToSignUpPage } from "../../routes/coordinator";
-import { Input, Field } from "../../components/styles";
-// import { Container } from './styles';
 
 function LoginPage() {
   const history = useHistory();
@@ -43,7 +42,7 @@ function LoginPage() {
     });
     return (
       <form onSubmit={formik.handleSubmit}>
-        <Field>
+        <Fields>
           <Input
             id="email"
             name="email"
@@ -68,7 +67,7 @@ function LoginPage() {
           {formik.touched.password && formik.errors.password ? (
             <div>{formik.errors.password}</div>
           ) : null}
-        </Field>
+        </Fields>
         <div>
           <button type="submit">Entrar</button>
         </div>

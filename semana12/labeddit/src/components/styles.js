@@ -12,7 +12,7 @@ export const Field = styled.div`
 export const Input = styled.input`
   display: block;
   box-sizing: border-box;
-  max-width: 600px;
+  width: 600px;
   width: 100%;
   padding: 20px 10px;
   border-radius: 4px;

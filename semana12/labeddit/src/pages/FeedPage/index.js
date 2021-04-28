@@ -1,38 +1,16 @@
-import React, { useEffect, useState } from "react";
-import { Container } from "./styles";
+import React from "react";
+import { Container, Field, Input } from "./styles";
 import * as Yup from "yup";
 import { useProtectedPage } from "../../hooks/useProtectPage";
 import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 import axios from "axios";
+import Cards from "../../components/Cards";
 
 function FeedPage() {
   const history = useHistory();
   useProtectedPage();
-  const [posts, setPosts] = useState([]);
-  useEffect(() => {
-    getPosts();
-  }, []);
-  const getPosts = () => {
-    const token = window.localStorage.getItem("token");
-    axios
-      .get(
-        "https://us-central1-labenu-apis.cloudfunctions.net/labEddit/posts",
-        {
-          headers: {
-            Authorization: token,
-          },
-        }
-      )
-      .then((res) => {
-        setPosts(res.data.posts);
-        console.log(res.data.posts);
-      })
-      .catch((err) => {
-        alert("Erro ao fazer requisição");
-      });
-  };
-  console.log(posts);
+
   const PostForm = () => {
     const post = (values) => {
       const body = values;
@@ -73,8 +51,8 @@ function FeedPage() {
     });
     return (
       <form onSubmit={formik.handleSubmit}>
-        <div>
-          <input
+        <Field>
+          <Input
             id="title"
             name="title"
             type="title"
@@ -86,9 +64,7 @@ function FeedPage() {
           {formik.touched.title && formik.errors.title ? (
             <div>{formik.errors.title}</div>
           ) : null}
-        </div>
-        <div>
-          <input
+          <Input
             id="text"
             name="text"
             type="text"
@@ -100,27 +76,18 @@ function FeedPage() {
           {formik.touched.text && formik.errors.text ? (
             <div>{formik.errors.text}</div>
           ) : null}
-        </div>
+        </Field>
         <div>
           <button type="submit">Postar</button>
         </div>
       </form>
     );
   };
-
-  const listPost = posts.map((post) => {
-    return (
-      <div>
-        <div> Autor: {post.username}</div>
-        <div>Texto:{post.text}</div>
-      </div>
-    );
-  });
   return (
     <Container>
       <div>Feed Page</div>
       <PostForm />
-      {listPost}
+      <Cards />
     </Container>
   );
 }
