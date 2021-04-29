@@ -1,11 +1,12 @@
 import React from "react";
-import { Container, Field, Input } from "./styles";
+import { Container, Field, InputText, InputTitle, Button } from "./styles";
 import * as Yup from "yup";
 import { useProtectedPage } from "../../hooks/useProtectPage";
 import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 import axios from "axios";
 import Cards from "../../components/Cards";
+import Header from "../../components/Header";
 
 function FeedPage() {
   const history = useHistory();
@@ -29,7 +30,7 @@ function FeedPage() {
           alert("Postagem feita com sucesso!");
         })
         .catch((err) => {
-          alert("Erro: Usuário não encontrado");
+          alert("Erro: preencha todos os campos, tente novamente mais tarde");
         });
     };
     const formik = useFormik({
@@ -52,10 +53,11 @@ function FeedPage() {
     return (
       <form onSubmit={formik.handleSubmit}>
         <Field>
-          <Input
+          <InputTitle
             id="title"
             name="title"
             type="title"
+            required
             placeholder="Título"
             onChange={formik.handleChange}
             onBlur={formik.handleBlur}
@@ -64,7 +66,8 @@ function FeedPage() {
           {formik.touched.title && formik.errors.title ? (
             <div>{formik.errors.title}</div>
           ) : null}
-          <Input
+          <InputText
+            required
             id="text"
             name="text"
             type="text"
@@ -76,16 +79,14 @@ function FeedPage() {
           {formik.touched.text && formik.errors.text ? (
             <div>{formik.errors.text}</div>
           ) : null}
+          <Button type="submit">Postar</Button>
         </Field>
-        <div>
-          <button type="submit">Postar</button>
-        </div>
       </form>
     );
   };
   return (
     <Container>
-      <div>Feed Page</div>
+      <Header />
       <PostForm />
       <Cards />
     </Container>

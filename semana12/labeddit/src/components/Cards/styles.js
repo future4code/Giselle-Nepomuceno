@@ -6,12 +6,14 @@ export const Container = styled.div`
 `;
 
 export const PostBox = styled.div`
+  margin-top: 30px;
   border-radius: 3px;
   border: 2px solid #b3b2b2;
   box-sizing: border;
   margin-top: 30px;
   width: 600px;
   padding: 10px;
+  cursor: pointer;
 `;
 export const PostsField = styled.div`
   display: flex;

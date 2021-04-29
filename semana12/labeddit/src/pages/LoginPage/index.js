@@ -3,7 +3,8 @@ import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import axios from "axios";
-import { Input, Fields } from "./styles";
+import { Input, Fields, Button, ButtonContent } from "./styles";
+import Header from "../../components/Header";
 import { goToSignUpPage } from "../../routes/coordinator";
 
 function LoginPage() {
@@ -19,7 +20,7 @@ function LoginPage() {
         )
         .then((res) => {
           window.localStorage.setItem("token", res.data.token);
-          history.push("/feeds");
+          history.push("/feed");
         })
         .catch((err) => {
           alert("Erro: Usuário não encontrado");
@@ -68,17 +69,17 @@ function LoginPage() {
             <div>{formik.errors.password}</div>
           ) : null}
         </Fields>
-        <div>
-          <button type="submit">Entrar</button>
-        </div>
-        <div>
-          <button onClick={() => goToSignUpPage(history)}>Cadastre-se</button>{" "}
-        </div>
+        <ButtonContent>
+          <Button type="submit">Entrar</Button>
+
+          <Button onClick={() => goToSignUpPage(history)}>Cadastre-se</Button>
+        </ButtonContent>
       </form>
     );
   };
   return (
     <div>
+      <Header />
       <h1>Login Page</h1>
       <LoginForm />
     </div>

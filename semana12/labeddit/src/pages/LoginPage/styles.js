@@ -8,7 +8,7 @@ export const Container = styled.div`
 export const Input = styled.input`
   display: block;
   box-sizing: border-box;
-  width: 600px;
+  max-width: 600px;
   width: 100%;
   padding: 20px 10px;
   border-radius: 4px;
@@ -29,5 +29,32 @@ export const Fields = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0 40px;
+  gap: 10px;
+`;
+export const Button = styled.button`
+  padding: 10px 20px;
+  display: block;
+  box-sizing: border-box;
+  max-width: 600px;
+  width: 100%;
+  border-radius: 4px;
+  border: none;
+  background-color: #005fcc;
+  color: white;
+  font-size: 14px;
+  font-family: "Raleway", sans-serif;
+  font-weight: 800;
+  cursor: pointer;
+  transition: 300ms;
+  :hover {
+    background-color: #ff4500;
+  }
+`;
+
+export const ButtonContent = styled.div`
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
   gap: 10px;
 `;
