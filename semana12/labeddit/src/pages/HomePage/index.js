@@ -1,5 +1,4 @@
 import React from "react";
-import LoginPage from "../LoginPage";
 import Header from "../../components/Header";
 import { goToFeedPage } from "../../routes/coordinator";
 import { useHistory } from "react-router-dom";

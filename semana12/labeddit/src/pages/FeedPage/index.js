@@ -1,16 +1,16 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Container, Field, InputText, InputTitle, Button } from "./styles";
 import * as Yup from "yup";
 import { useProtectedPage } from "../../hooks/useProtectPage";
-import { useHistory } from "react-router-dom";
 import { useFormik } from "formik";
+import { useHistory } from "react-router-dom";
 import axios from "axios";
 import Cards from "../../components/Cards";
 import Header from "../../components/Header";
 
 function FeedPage() {
-  const history = useHistory();
   useProtectedPage();
+  const history = useHistory();
 
   const PostForm = () => {
     const post = (values) => {
@@ -28,6 +28,7 @@ function FeedPage() {
         )
         .then((res) => {
           alert("Postagem feita com sucesso!");
+          history.push("/feed");
         })
         .catch((err) => {
           alert("Erro: preencha todos os campos, tente novamente mais tarde");
@@ -40,10 +41,10 @@ function FeedPage() {
       },
       validationSchema: Yup.object({
         title: Yup.string()
-          .max(20, "Deve ter no máximo 200 caracteres")
+          .max(100, "Deve ter no máximo 200 caracteres")
           .min(4, "Deve ter no mínimo 20 caracteres"),
         text: Yup.string()
-          .max(200, "Deve ter no máximo 200 caracteres")
+          .max(800, "Deve ter no máximo 200 caracteres")
           .min(3, "Deve ter no mínimo 20 caracteres"),
       }),
       onSubmit: (values) => {

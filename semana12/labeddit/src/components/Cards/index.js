@@ -14,10 +14,12 @@ function Cards() {
   const history = useHistory();
   useProtectedPage();
   const [posts, setPosts] = useState([]);
+
   useEffect(() => {
-    getPosts();
+    getPost();
   }, []);
-  const getPosts = () => {
+
+  const getPost = () => {
     const token = window.localStorage.getItem("token");
     axios
       .get(
@@ -52,7 +54,7 @@ function Cards() {
       )
       .then((res) => {
         alert("Voto efeutado com sucesso");
-        getPosts();
+        getPost();
       })
       .catch((err) => {
         alert("Erro ao tentar fazer requisição");

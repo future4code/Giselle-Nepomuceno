@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import { Container, Img, Button, ButtonContent } from "./styles";
 import { useHistory } from "react-router-dom";
 import Logo from "../../images/Logo.png";
