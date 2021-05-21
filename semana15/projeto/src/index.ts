@@ -13,17 +13,41 @@ name:string,
 cpf:number,
 birth:string ,
 }
+let users: user[] = [{
+    name: "Giselle Rosa",
+    cpf: 10101010101,
+    birth:"02/10/1993",
 
-app.post("/bank/createAccount", (req:Request, res:Response)=>{
-    const body : user = req.body;
-    if (body){
-        let birth = "22122009"
-        let birthYear = birth.substr(4)
-        let currentYear = new Date().getFullYear()
-        let calcYear = Number(birthYear) - currentYear
-        console.log(calcYear)
-        if ( calcYear >= 18 ){
+}]
+app.post("/labebank/createaccount", (req:Request, res:Response)=>{
+    try{const {name,cpf, birth} = req.body;
+        const newUser: user = {
+            name,
+            cpf,
+            birth
         }
+        users.push(newUser);
+
+        if (newUser){
+            let birth = newUser.birth
+            let birthYear = birth.substr(6)
+            let currentYear = new Date().getFullYear()
+            let calcYear =  currentYear - Number(birthYear) 
+            console.log(calcYear)
+            if ( calcYear >= 18 ){
+                res.status(200).send({
+                    message: "ok",
+                    user: newUser,
+                });
+            }else {
+                res.status(404).send('Para abrir a conta é necessário ter mais de 18 anos.');
+            }
+        }
+    }catch (err) {
+        res.status(400).send({
+          message: err.message,
+        });
+      }
     }
 })
 
