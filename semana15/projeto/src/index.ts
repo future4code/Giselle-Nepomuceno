@@ -76,3 +76,29 @@ app.post("/labebank/createaccount", (req: Request, res: Response) => {
 app.listen(3003, () => {
   console.log("Server is running at http://localhost:3003");
 });
+
+
+app.get("/labebank/bankbalance", (req: Request, res: Response) => {
+    const { name, cpf } = req.body
+
+    try{
+         if (name && cpf){
+               const findUser = users.find(user => user.name === name && user.cpf === cpf)
+               if (findUser){
+                    res.status(200).send({
+                        message: "ok",
+                        balance: findUser.bankBalance,
+                      });
+                }else{
+                    throw new Error("User not found")
+                }
+            }else{
+                throw new Error("Necessary complete informations name and cpf")
+            }
+    }catch (err) {
+            res.status(400).send({
+              message: err.message,
+            });
+    }
+})
+
