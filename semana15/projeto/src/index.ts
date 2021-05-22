@@ -36,7 +36,7 @@ app.post("/labebank/createaccount", (req: Request, res: Response) => {
 
     try {
         if(name && cpf && birth){
-            const checkCPFuser = users.find(element => element.cpf === cpf)
+            const checkCPFuser = users.find(user => user.cpf === cpf)
             if(checkCPFuser){
                 throw new Error("This account already exist")
             }
@@ -87,9 +87,11 @@ app.get("/labebank/bankbalance", (req: Request, res: Response) => {
                if (findUser){
                     res.status(200).send({
                         message: "ok",
-                        balance: findUser.bankBalance,
+                        bankbalance: findUser.bankBalance,
                       });
-                }else{
+                }else if (!name || !cpf){
+                    throw new Error("It's necessary insert your name and cpf")
+                }else {
                     throw new Error("User not found")
                 }
             }else{
@@ -102,3 +104,25 @@ app.get("/labebank/bankbalance", (req: Request, res: Response) => {
     }
 })
 
+app.put("/labebank/addbalance", (req:Request, res:Response)=>{
+    const { name, cpf, bankBalance } = req.body
+    if (name && cpf){
+        const findUser = users.find(user => user.name === name && user.cpf === cpf)
+        if (findUser){
+            const newBalance: number  = findUser.bankBalance + bankBalance
+            findUser.bankBalance = newBalance
+            if(newBalance){
+                res.status(200).send({
+                    message: "ok",
+                    bankbalance: newBalance,
+                  });
+            } else if(!bankBalance||bankBalance === 0){
+            throw new Error("It's Necessary insert a value in your account")
+            } 
+        }else if (!findUser){
+            throw new Error("User not found")
+        }
+    }else if(!name || !cpf){
+        throw new Error("It's necessary insert your name and cpf")
+    }
+})
