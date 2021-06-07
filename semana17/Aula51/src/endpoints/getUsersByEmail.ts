@@ -1,9 +1,8 @@
 import { Request, Response } from "express";
-import app from "../app";
 import { getUserByEmail } from "../data/createUserData";
 import { generateToken } from "../services/authenticator"
 
- export default app.get("/user/getUser", async(req:Request, res:Response) =>{
+ export default async function getUsersByEmail(req:Request, res:Response): Promise<void>{
    try{
       if( !req.body.email || req.body.email.indexOf("@") < 0){
          throw new Error("Invalid email");
@@ -30,4 +29,4 @@ import { generateToken } from "../services/authenticator"
       res.status(400).send({message:error.message})
 
    } 
-})
+}

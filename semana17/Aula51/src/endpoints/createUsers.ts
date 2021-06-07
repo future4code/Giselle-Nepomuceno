@@ -4,7 +4,7 @@ import { createUser } from "../data/createUserData";
 import { generateId } from './../services/idGenerator';
 import { generateToken } from "../services/authenticator"
 
- export default app.post("/user/signup", async(req:Request, res:Response) =>{
+ export default async function createUsers(req:Request, res:Response): Promise<void> {
    try{
       if( !req.body.email || req.body.email.indexOf("@") < 0){
          throw new Error("Invalid email");
@@ -24,10 +24,10 @@ import { generateToken } from "../services/authenticator"
          id
       })
 
-      res.status(200).send({token,})
+      res.status(200).send({token})
       
    } catch(error){
       res.status(400).send({message:error.message})
-
+      console.log
    } 
-})
+}
