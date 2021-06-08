@@ -1,9 +1,8 @@
 import { Request, Response } from "express";
-import app from "../app";
 import { createUser } from "../data/createUserData";
 import { generateId } from './../services/idGenerator';
 import { generateToken } from "../services/authenticator"
-
+import  { hash } from '../hasManager'
  export default async function createUsers(req:Request, res:Response): Promise<void> {
    try{
       if( !req.body.email || req.body.email.indexOf("@") < 0){
@@ -15,13 +14,17 @@ import { generateToken } from "../services/authenticator"
 
       const userData = {
          email: req.body.email,
-         password: req.body.password
+         password: req.body.password,
+         role: req.body.role,
       }
-
+      
+     
       const id = generateId();
-      await createUser(id, userData.email, userData.password);
+      const hashPassword = await hash(userData.password)
+      await createUser(id, userData.email, hashPassword);
       const token = generateToken({
-         id
+         id,
+         role: userData.role,
       })
 
       res.status(200).send({token})

@@ -2,6 +2,7 @@ import * as jwt from "jsonwebtoken";
 
 export type authenticationData= {
     id: string
+    role:string
 }
 export function generateToken(payload: authenticationData):string {
     return jwt.sign(
