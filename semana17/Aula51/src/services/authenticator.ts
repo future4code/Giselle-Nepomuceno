@@ -14,7 +14,7 @@ export function generateToken(payload: authenticationData):string {
         }
     )
 }
-export function getTokenData(token:string): object {
+export function getTokenData(token:string): authenticationData{
    const result:authenticationData = jwt.verify(
         token,   process.env.JWT_KEY as string
     
@@ -23,7 +23,7 @@ export function getTokenData(token:string): object {
 }
 // import * as jwt from "jsonwebtoken";
 
-// const getData = (token: string): AuthenticationData => {
+// export const getData = (token: string): authenticationData => {
 //   const payload = jwt.verify(token, process.env.JWT_KEY as string) as any;
 //   const result = {
 //     id: payload.id,
