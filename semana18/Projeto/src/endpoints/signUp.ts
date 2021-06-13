@@ -21,6 +21,12 @@ export default async function signUp(req: Request, res: Response): Promise<void>
         if(!body.name || !body.email || !body.password) {
             throw new Error("Missing information, necessary complete name, password and email")
     }
+        if( !req.body.email || req.body.email.indexOf("@") < 0){
+            throw new Error("Invalid email");
+        }
+        if(!req.body.password || req.body.password.length < 6) {
+            throw new Error("Invalid format, necessary use at least 6 characters");
+        }
         const user: User = {
             id: idGenerate(),
             name: body.name,
