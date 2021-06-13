@@ -1,0 +1,12 @@
+GET http://localhost:3003/actors/name/Fagundin
+###
+GET http://localhost:3003/actors/gender/female 
+
+
+###
+PUT http://localhost:3003/actors/salary/4
+Content-Type: application/json
+
+{
+    "salary": 5000000
+}
