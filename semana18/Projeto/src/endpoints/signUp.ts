@@ -2,6 +2,7 @@ import {Request, Response} from "express";
 import {idGenerate} from "../services/idGenerate";
 import {User} from "../types";
 import connection from "../connection";
+import { generateToken } from "../services/authenticator"
 
 interface userRequest {
     name: string,
@@ -27,17 +28,21 @@ export default async function signUp(req: Request, res: Response): Promise<void>
         if(!req.body.password || req.body.password.length < 6) {
             throw new Error("Invalid format, necessary use at least 6 characters");
         }
+
         const user: User = {
             id: idGenerate(),
             name: body.name,
             email: body.email,
             password: body.password
         }
+        const token = generateToken(
+            {id: user.id}
+        )
 
         await connection("UserCookenu")
             .insert(user)
 
-        res.status(201).send("User created successfully")
+        res.status(201).send(token)
 
     } catch (error) {
         res.status(400).send(error.message);
