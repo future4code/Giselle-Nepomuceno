@@ -5,3 +5,9 @@ export type User = {
     email: string, 
     password: string
 }
+
+export interface userRequestData {
+    name: string,
+    email: string, 
+    password:string
+}
