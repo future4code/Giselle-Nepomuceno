@@ -8,9 +8,10 @@ interface userRequest {
 	nickname: string,
 	email: string
 }
+
 //interface é similar ao type  -- Lembre-se não tem = ou : se usar interface em vez de type
 
-export default async function createUser(req: Request, res: Response) {
+export default async function createUser(req: Request, res: Response): Promise<void> {
     try {
         const body: userRequest = { 
             name: req.body.name,
@@ -36,7 +37,7 @@ export default async function createUser(req: Request, res: Response) {
             .insert(user)
             
 
-        res.status(200).send("User created successfully")
+        res.status(201).send("User created successfully")
     } catch(error) {
         res.status(400).send(error.message);
     }
