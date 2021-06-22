@@ -17,6 +17,7 @@
     "typescript": "^3.9.3"
   },
   "devDependencies": {
-    "@types/mocha": "^8.2.2"
+    "@types/mocha": "^8.2.2",
+    "@types/jest": "^26.0.23"
   }
 }

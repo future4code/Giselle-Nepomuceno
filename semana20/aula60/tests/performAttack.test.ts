@@ -4,6 +4,9 @@ import { Character } from "../src/validateCharacter";
 describe("Testing performAttack functions", () => {
 
     test("should be able to fight", () => {
+        //estou mockando minha função de validação de personagem
+        // ao dizer que da true, tudo o que eu fizer relacionado a função sera true
+        // é como dizer que a funcao validateCharacter SEMPRE DARA TRUE!
         const validatemock = jest.fn(()=>{
                 return true
             });
@@ -20,6 +23,7 @@ describe("Testing performAttack functions", () => {
             strength: 500
         }
         
-        performAttack(defenderCharacter, attackCharacter, validatemock as any);
+        performAttack( attackCharacter, defenderCharacter, validatemock as any);
+        expect(defenderCharacter.life).toBe(1400);
     })
 })
