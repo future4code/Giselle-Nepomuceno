@@ -5,7 +5,7 @@ CREATE TABLE Actor (
     birth_date DATE NOT NULL,
     gender VARCHAR(6) NOT NULL
 );
-
+ 
 -- AULA 45
 /* Exercicio 1
 

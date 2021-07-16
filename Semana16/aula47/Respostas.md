@@ -2,7 +2,7 @@
 
 a) dependnedo da forma como foi solicitada a respota ele se por exemplo
 ele ira mandar a resposta completa de um get por raw exatamente como pedido no pedidoe como encontra-se no banco de dados.
-
+ 
 b) try{
 
         const result = await connection.raw(`

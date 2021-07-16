@@ -19,7 +19,7 @@ O show table mostra SHOW TABLE mostra as tabelas existentes no banco de dados.
 
 c) O describe vai lhe fornecer todos os valores que precisam ser inseridos na tabela, se a informaçao 
 é null se existe uma key, e qual é e quais sao os campos da tabela.*/
-
+ 
 SHOW DATABASES;
 
 SHOW TABLES;

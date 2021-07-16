@@ -5,4 +5,4 @@ export type taskData = {
    authorId: string
 }
 
-export type task = taskData & { id: string }
+export type task = taskData & { id: string } 
